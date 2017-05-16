@@ -1,0 +1,25 @@
+export LSCOLORS=gxfxcxdxbxegedabagacad
+PS1='\[\033[0;32m\]\u@\h \[\033[00m\]\[\033[0;37m\][\t]:\[\033[00m\] \[\033[0;36m\]\w\[\033[00m\]\n\[\033[0;37m\]\$\[\033[00m\] '
+
+# bash_completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+	. $(brew --prefix)/etc/bash_completion
+fi
+
+# bash_history
+export HISTCONTROL=ignoredups
+export HISTIGNORE=ls*:cd*:source*:exit
+export HISTTIMEFORMAT='%F %T '
+
+alias mv='mv -iv'
+alias cp='cp -iv'
+alias rm='rm -iv'
+alias mkdir='mkdir -pv'
+
+alias ls='ls -AhFG'
+alias less='less -M'
+alias grep='grep --color'
+
+alias vi='vim'
+alias clang='clang -Wall'
+alias clang++='clang++ -Wall'
