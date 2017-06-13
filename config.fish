@@ -20,6 +20,12 @@ function fish_prompt
     echo $prompt_symbol
 end
 
+function fish_right_prompt
+    set -l git_branch (git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ [\1]/')
+    set_color ff8c00
+    echo $git_branch
+end
+
 # alias
 function mv; command mv -iv $argv; end
 function cp; command cp -iv $argv; end
