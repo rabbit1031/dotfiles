@@ -3,11 +3,8 @@
 #
 
 # bashrc
-if [ -f "${HOME}/.bashrc" ]; then
-	source "${HOME}/.bashrc"
-fi
+test -r ${HOME}/.bashrc && source ${HOME}/.bashrc
 
 # user bin
-if [ -d "${HOME}/bin" ]; then
-	PATH="${PATH}:${HOME}/bin"
-fi
+test -d ${HOME}/bin && PATH="${HOME}/bin:$PATH"
+export PATH=${PATH}
