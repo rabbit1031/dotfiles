@@ -3,6 +3,10 @@
     audioBeep: false
     closeDeletedFileTabs: true
     telemetryConsent: "limited"
+    themes: [
+      "atom-dark-ui"
+      "monokai"
+    ]
   editor:
     fontSize: 12
     lineHeight: 1.2
@@ -13,3 +17,8 @@
     tabLength: 4
   "exception-reporting":
     userId: "fc5977d4-ed6f-4010-bc0e-c8b301d7fe1f"
+  "highlight-line": {}
+  "linter-ui-default":
+    showPanel: true
+  welcome:
+    showOnStartup: false
