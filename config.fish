@@ -29,12 +29,22 @@ function fish_right_prompt
     echo $git_branch
 end
 
-# alias
+# aliases
 function mv; command mv -iv $argv; end
 function cp; command cp -iv $argv; end
 function rm; command rm -iv $argv; end
 function mkdir; command mkdir -pv $argv; end
 
-function ls; command ls -AFh --color=auto $argv; end
+function less; command less -M $argv; end
+function grep; command grep -n --color=auto $argv; end
 
 function vi; command vim $argv; end
+
+# colorized ls
+switch (uname -s)
+    case Darwin
+        set -x LSCOLORS gxfxcxdxbxegedabagacad
+        function ls; command ls -AhFG $argv; end
+    case Linux
+        function ls; command ls -AFh --color=auto $argv; end
+end
