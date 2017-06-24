@@ -1,3 +1,6 @@
+# suppress a welcome message
+set fish_greeting
+
 # prompt
 function fish_prompt
 	set -l home_escaped (echo -n $HOME | sed 's/\//\\\\\//g')
