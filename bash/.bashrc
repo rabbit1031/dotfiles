@@ -35,6 +35,8 @@ alias less='less -M'
 alias grep='grep -n --color=auto'
 
 alias vi='vim'
+alias clang='clang -Wall'
+alias clang++='clang++ -Wall'
 
 # colorized ls
 if [ $PLATFORM = "Darwin" ]; then
@@ -42,4 +44,9 @@ if [ $PLATFORM = "Darwin" ]; then
     alias ls='ls -AhFG'
 elif [ $PLATFORM = "Linux" ]; then
     alias ls='ls -AhF --color=auto'
+fi
+
+# tmux
+if  [ -x "$(which fish)" ]; then
+    alias tmux='SHELL=$(which fish) tmux'
 fi
