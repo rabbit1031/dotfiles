@@ -27,6 +27,7 @@ function fish_right_prompt
     set -l git_branch (git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ [\1]/')
     set_color ff8c00
     echo $git_branch
+    set_color normal
 end
 
 # aliases
