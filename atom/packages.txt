@@ -10,7 +10,7 @@ language-awk@0.1.12
 linter@2.2.0
 linter-clang@4.1.1
 linter-ui-default@1.6.2
-minimap@4.28.2
+minimap@4.28.3
 monokai@0.24.0
 regex-railroad-diagram@0.19.3
 
