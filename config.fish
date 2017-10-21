@@ -39,6 +39,7 @@ function less; command less -M $argv; end
 function grep; command grep -n --color=auto $argv; end
 
 function vi; command vim $argv; end
+function vir; command vim -R $argv; end
 function clang; command clang -Wall $argv; end
 function clang++; command clang++ -Wall $argv; end
 
