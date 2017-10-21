@@ -2,15 +2,15 @@ autocomplete-awk@0.1.2
 autocomplete-clang@0.11.3
 busy-signal@1.4.3
 convert-to-utf8@0.2.4
-file-icons@2.1.11
+file-icons@2.1.13
 highlight-line@0.12.0
 highlight-selected@0.13.1
 intentions@1.1.5
 language-awk@0.1.12
 linter@2.2.0
 linter-clang@4.1.2
-linter-ui-default@1.6.7
-minimap@4.29.6
+linter-ui-default@1.6.10
+minimap@4.29.7
 monokai@0.24.0
-regex-railroad-diagram@0.19.3
+regex-railroad-diagram@0.19.4
 
