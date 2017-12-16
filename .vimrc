@@ -1,5 +1,8 @@
 set nocompatible
 
+" --- backspace ---
+set backspace=indent,eol,start
+
 " --- appearance ---
 syntax on
 colorscheme molokai
@@ -28,6 +31,11 @@ set softtabstop=4
 set autoindent
 set smartindent
 set expandtab
+
+augroup fileTypeIndent
+    autocmd!
+    autocmd FileType scala setlocal tabstop=2 softtabstop=2 shiftwidth=2
+augroup END
 
 " --- search ---
 set incsearch
