@@ -33,8 +33,9 @@ set smartindent
 set expandtab
 
 augroup fileTypeIndent
-    autocmd!
-    autocmd FileType scala setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd!
+  autocmd FileType scala  setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd FileType vim    setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
 " --- search ---
