@@ -1,3 +1,4 @@
+# vim:set ts=2 sts=2 sw=2:
 #
 # ~/.bashrc
 #
@@ -13,16 +14,16 @@ export HISTCONTROL=ignoredups
 export HISTTIMEFORMAT='%F %T '
 export HISTIGNORE='cd:ls:[fb]g:exit:source'
 function sync_history {
-    history -a
-    history -c
-    history -r
+  history -a
+  history -c
+  history -r
 }
 PROMPT_COMMAND='sync_history'
 shopt -u histappend
 
 # bash_completion
-if [ $PLATFORM = "Darwin" ] && [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
+if [ $PLATFORM = "Darwin" ] && [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
+  . $(brew --prefix)/share/bash-completion/bash_completion
 fi
 
 # aliases
@@ -40,13 +41,13 @@ alias clang++='clang++ -Wall'
 
 # colorized ls
 if [ $PLATFORM = "Darwin" ]; then
-    export LSCOLORS='gxfxcxdxbxegedabagacad' # default: exfxcxdxbxegedabagacad
-    alias ls='ls -AhFG'
+  export LSCOLORS='gxfxcxdxbxegedabagacad' # default: exfxcxdxbxegedabagacad
+  alias ls='ls -AhFG'
 elif [ $PLATFORM = "Linux" ]; then
-    alias ls='ls -AhF --color=auto'
+  alias ls='ls -AhF --color=auto'
 fi
 
 # tmux
 if  [ -x "$(which fish)" ]; then
-    alias tmux='SHELL=$(which fish) tmux'
+  alias tmux='SHELL=$(which fish) tmux'
 fi
