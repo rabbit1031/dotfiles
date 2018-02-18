@@ -1,4 +1,7 @@
 "*":
+  "atom-clock":
+    dateFormat: "HH:mm"
+    showClockIcon: true
   core:
     audioBeep: false
     closeDeletedFileTabs: true
@@ -18,7 +21,10 @@
   "exception-reporting":
     userId: "fc5977d4-ed6f-4010-bc0e-c8b301d7fe1f"
   "highlight-line": {}
-  "linter-ui-default":
-    showPanel: true
+  "linter-ui-default": {}
+  "markdown-preview": {}
   welcome:
     showOnStartup: false
+".html.php.text":
+  editor:
+    tabType: "soft"

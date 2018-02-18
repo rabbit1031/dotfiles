@@ -21,6 +21,9 @@ function sync_history {
 PROMPT_COMMAND='sync_history'
 shopt -u histappend
 
+# disable less history
+export LESSHISTFILE=/dev/null
+
 # bash_completion
 if [ $PLATFORM = "Darwin" ] && [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
   . $(brew --prefix)/share/bash-completion/bash_completion

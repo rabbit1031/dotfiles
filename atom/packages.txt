@@ -1,8 +1,9 @@
+atom-clock@0.1.16
 autocomplete-awk@0.1.2
-autocomplete-clang@0.11.3
+autocomplete-clang@0.11.4
 busy-signal@1.4.3
 convert-to-utf8@0.2.4
-file-icons@2.1.13
+file-icons@2.1.16
 highlight-line@0.12.0
 highlight-selected@0.13.1
 intentions@1.1.5

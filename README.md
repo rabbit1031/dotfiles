@@ -1,13 +1,13 @@
 # dotfiles
 
-### Atom
+## Atom
 
-#### Generating package lists
+### Generating package lists
 ```
 $ apm list --installed --bare > ~/dotfiles/atom/packages.txt
 ```
 
-#### install
+### install
 ```
 $ apm install --package-file ~/dotfiles/atom/packages.txt
 ```
