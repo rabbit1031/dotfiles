@@ -4,6 +4,11 @@
 
 PLATFORM=$(uname -s)
 
+path=(
+  $HOME/.nodebrew/current/bin(N-/)
+  $path
+)
+
 # ##############################
 # Look and Feel
 # ##############################
