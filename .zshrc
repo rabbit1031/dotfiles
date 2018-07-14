@@ -9,6 +9,11 @@ path=(
   $path
 )
 
+fpath=(
+  /usr/local/share/zsh-completions(N-/)
+  $fpath
+)
+
 # ##############################
 # Look and Feel
 # ##############################
@@ -60,7 +65,6 @@ WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 # ##############################
 # completion
 # ##############################
-fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -Uz compinit && compinit
 
 # for dotfiles
