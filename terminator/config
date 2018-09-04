@@ -1,0 +1,41 @@
+[global_config]
+  broadcast_default = off
+[keybindings]
+  close_term = <Primary><Shift>w
+  copy = <Primary>c
+  go_down = <Primary>j
+  go_left = <Primary>h
+  go_next = None
+  go_prev = None
+  go_right = <Primary>l
+  go_up = <Primary>k
+  move_tab_left = <Primary><Shift>braceleft
+  move_tab_right = <Primary><Shift>braceright
+  new_tab = <Primary><Shift>t
+  paste = <Primary>v
+  split_horiz = <Primary>minus
+  split_vert = <Primary>backslash
+  zoom_in = None
+  zoom_normal = None
+  zoom_out = None
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = default
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      size = 600, 650
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_darkness = 0.9
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = DejaVu Sans Mono 8
+    palette = "#000000:#cd0000:#00cd00:#cdcd00:#0000ee:#cd00cd:#00cdcd:#e5e5e5:#7f7f7f:#ff0000:#00ff00:#ffff00:#5c5cff:#ff00ff:#00ffff:#ffffff"
+    scrollback_lines = 10000
+    show_titlebar = False
+    use_system_font = False
