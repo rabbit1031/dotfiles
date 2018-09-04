@@ -3,12 +3,12 @@
 [keybindings]
   close_term = <Primary><Shift>w
   copy = <Primary>c
-  go_down = <Primary>j
-  go_left = <Primary>h
+  go_down = <Primary><Shift>j
+  go_left = <Primary><Shift>h
   go_next = None
   go_prev = None
-  go_right = <Primary>l
-  go_up = <Primary>k
+  go_right = <Primary><Shift>l
+  go_up = <Primary><Shift>k
   move_tab_left = <Primary><Shift>braceleft
   move_tab_right = <Primary><Shift>braceright
   new_tab = <Primary><Shift>t

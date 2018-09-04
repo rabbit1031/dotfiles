@@ -1,5 +1,7 @@
 #! /bin/bash
 
+PLATFORM=$(uname -s)
+
 DOTFILES_DIR=$(cd `dirname $0`; pwd)
 echo "DOTFILES_DIR: ${DOTFILES_DIR}"
 
@@ -22,7 +24,10 @@ function link_bashfiles() {
 }
 
 function link_zshfiles() {
-  ln ${ln_options[*]} ${DOTFILES_DIR}/.zshrc ${HOME}/.zshrc
+  ln ${ln_options[*]} ${DOTFILES_DIR}/zsh/.zshrc ${HOME}/.zshrc
+  if [ -r ${DOTFILES_DIR}/zsh/.zshrc.${PLATFORM} ]; then
+    ln ${ln_options[*]} ${DOTFILES_DIR}/zsh/.zshrc.${PLATFORM} ${HOME}/.zshrc.${PLATFORM}
+  fi
 }
 
 function link_vimfiles() {

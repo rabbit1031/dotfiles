@@ -14,6 +14,8 @@ fpath=(
   $fpath
 )
 
+test -r ${HOME}/.zshrc.${PLATFORM} && source ${HOME}/.zshrc.${PLATFORM}
+
 # ##############################
 # Look and Feel
 # ##############################
