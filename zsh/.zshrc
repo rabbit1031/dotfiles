@@ -5,7 +5,7 @@
 PLATFORM=$(uname -s)
 
 path=(
-  $HOME/.nodebrew/current/bin(N-/)
+  ${HOME}/.jenv/bin(N-/)
   $path
 )
 
@@ -15,6 +15,8 @@ fpath=(
 )
 
 test -r ${HOME}/.zshrc.${PLATFORM} && source ${HOME}/.zshrc.${PLATFORM}
+
+test -x /usr/local/bin/jenv && eval "$(jenv init -)"
 
 # ##############################
 # Look and Feel
