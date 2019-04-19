@@ -32,6 +32,9 @@ function link_zshfiles() {
 
 function link_vimfiles() {
   ln ${ln_options[*]} ${DOTFILES_DIR}/.vimrc ${HOME}/.vimrc
+  if [ -d ${HOME}/.vim/colors ]; then
+    mkdir -pv ${HOME}/.vim/colors
+  fi
 }
 
 function link_atomfiles() {
