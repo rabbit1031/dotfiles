@@ -35,6 +35,10 @@ function link_vimfiles() {
   if [ -d ${HOME}/.vim/colors ]; then
     mkdir -pv ${HOME}/.vim/colors
   fi
+
+  test -d ${HOME}/.config/nvim && mkdir -pv ${HOME}/.config/nvim
+  ln ${ln_options[*]} ${DOTFILES_DIR}/vim/init.vim ${HOME}/.config/nvim/init.vim
+  ln ${ln_options[*]} ${DOTFILES_DIR}/vim/plugins.toml ${HOME}/.config/nvim/plugins.toml
 }
 
 function link_atomfiles() {

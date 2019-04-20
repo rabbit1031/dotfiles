@@ -129,7 +129,8 @@ alias type="type -a"
 alias diff='diff -s'
 alias grep='grep --color=auto'
 alias less='less -M'
-alias vi='vim'
+alias vi='nvim'
+alias vim='nvim'
 
 if [ $PLATFORM = "Darwin" ]; then
   alias ls="command ls -AFGh"
