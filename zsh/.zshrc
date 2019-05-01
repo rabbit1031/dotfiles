@@ -129,8 +129,6 @@ alias type="type -a"
 alias diff='diff -s'
 alias grep='grep --color=auto'
 alias less='less -M'
-alias vi='nvim'
-alias vim='nvim'
 
 if [ $PLATFORM = "Darwin" ]; then
   alias ls="command ls -AFGh"
@@ -139,3 +137,11 @@ elif [ $PLATFORM = "Linux" ]; then
 else
   alias ls="command ls -AFh"
 fi
+
+if command nvim --version > /dev/null 2>&1; then
+  alias vi='nvim'
+  alias vim='nvim'
+elif command vim --version > /dev/null 2>&1; then
+  alias vi='vim'
+fi
+
