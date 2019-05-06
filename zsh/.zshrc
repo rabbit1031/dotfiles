@@ -18,6 +18,8 @@ test -r ${HOME}/.zshrc.${PLATFORM} && source ${HOME}/.zshrc.${PLATFORM}
 
 test -x /usr/local/bin/jenv && eval "$(jenv init -)"
 
+zmodload zsh/zpty
+
 # ##############################
 # Look and Feel
 # ##############################
@@ -112,6 +114,8 @@ setopt hist_ignore_all_dups
 
 # ignore extra blanks
 setopt hist_reduce_blanks
+
+setopt hist_ignore_space
 
 # disable less history
 export LESSHISTFILE=/dev/null

@@ -7,6 +7,10 @@ on_i = 1
 hook_add = 'let g:deoplete#enable_at_startup = 1'
 
 [[plugins]]
+repo = 'deoplete-plugins/deoplete-zsh'
+on_i = 1
+
+[[plugins]]
 repo = 'itchyny/lightline.vim'
 
 [[plugins]]
