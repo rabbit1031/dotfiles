@@ -34,6 +34,7 @@ endif
 
 " --- appearance ---
 colorscheme darcula
+language en_US.UTF-8
 set number
 set showmatch
 set cursorline
