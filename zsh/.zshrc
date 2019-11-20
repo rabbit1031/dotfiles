@@ -145,7 +145,11 @@ fi
 if command nvim --version > /dev/null 2>&1; then
   alias vi='nvim'
   alias vim='nvim'
+  export EDITOR='nvim'
+  export DIFFPROG='nvim -d'
 elif command vim --version > /dev/null 2>&1; then
   alias vi='vim'
+  export EDITOR='vim'
+  export DIFFPROG='vimdiff'
 fi
 
