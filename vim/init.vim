@@ -32,6 +32,9 @@ endif
 
 "End dein Scripts-------------------------
 
+" --- clipboard ---
+set clipboard+=unnamedplus
+
 " --- appearance ---
 colorscheme darcula
 language en_US.UTF-8
