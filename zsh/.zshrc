@@ -16,8 +16,6 @@ fpath=(
 
 test -r ${HOME}/.zshrc.${PLATFORM} && source ${HOME}/.zshrc.${PLATFORM}
 
-test -x /usr/local/bin/jenv && eval "$(jenv init -)"
-
 zmodload zsh/zpty
 
 # ##############################
@@ -153,3 +151,6 @@ elif command vim --version > /dev/null 2>&1; then
   export DIFFPROG='vimdiff'
 fi
 
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="${HOME}/.sdkman"
+[[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ]] && source "${HOME}/.sdkman/bin/sdkman-init.sh"
