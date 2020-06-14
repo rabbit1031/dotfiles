@@ -83,6 +83,8 @@ set wrapscan
 " --------------------
 "  keymap
 " --------------------
+
+" tab
 nnoremap <silent> tn :tabnew<CR>
 nnoremap <silent> th :tabprevious<CR>
 nnoremap <silent> tl :tabnext<CR>
@@ -90,4 +92,8 @@ nnoremap <silent> tk :tabfirst<CR>
 nnoremap <silent> tj :tablast<CR>
 nnoremap <silent> tH :-tabmove<CR>
 nnoremap <silent> tL :+tabmove<CR>
+
+" buffer
+nnoremap <silent> bh :bprevious<CR>
+nnoremap <silent> bl :bnext<CR>
 
