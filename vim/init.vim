@@ -94,6 +94,6 @@ nnoremap <silent> tH :-tabmove<CR>
 nnoremap <silent> tL :+tabmove<CR>
 
 " buffer
-nnoremap <silent> bh :bprevious<CR>
-nnoremap <silent> bl :bnext<CR>
+nnoremap <silent> <C-b>h :bprevious<CR>
+nnoremap <silent> <C-b>l :bnext<CR>
 
