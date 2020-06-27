@@ -89,6 +89,13 @@ repo = 'neoclide/coc.nvim'
 merged = 0
 rev = 'release'
 hook_add = '''
+  let g:coc_global_extensions = [
+  \ 'coc-tsserver',
+  \ 'coc-rls',
+  \ 'coc-json',
+  \ 'coc-yaml',
+  \ 'coc-emoji'
+  \ ]
   " TextEdit might fail if hidden is not set.
   set hidden
 
