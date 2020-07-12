@@ -122,7 +122,7 @@ else
   alias ls="command ls -AFh"
 fi
 
-alias pip-update="pip3 list --outdated | awk '(NR > 2){print $1}' | xargs pip3 install -U"
+alias pip-update="pip3 list --outdated --format json | jq -r '.[].name' | xargs -p pip3 install -U"
 
 if command nvim --version > /dev/null 2>&1; then
   alias vi='nvim'
