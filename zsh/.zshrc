@@ -4,9 +4,9 @@
 
 PLATFORM=$(uname -s)
 
-fpath=(
-  /usr/local/share/zsh-completions(N-/)
-  $fpath
+path=(
+  /usr/local/opt/ruby/bin(N-/)
+  $path
 )
 
 [[ -r ${HOME}/.zshrc.${PLATFORM} ]] && source ${HOME}/.zshrc.${PLATFORM}
@@ -135,6 +135,7 @@ elif command vim --version > /dev/null 2>&1; then
   export DIFFPROG='vimdiff'
 fi
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="${HOME}/.sdkman"
-[[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ]] && source "${HOME}/.sdkman/bin/sdkman-init.sh"
+# google-cloud-sdk
+[[ -s "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc" ]] && source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+[[ -s "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc" ]] && source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+
