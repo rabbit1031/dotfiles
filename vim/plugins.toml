@@ -94,7 +94,10 @@ hook_add = '''
   \ 'coc-rls',
   \ 'coc-json',
   \ 'coc-yaml',
-  \ 'coc-emoji'
+  \ 'coc-emoji',
+  \ 'coc-phpls',
+  \ 'coc-markdownlint',
+  \ 'coc-solargraph'
   \ ]
   " TextEdit might fail if hidden is not set.
   set hidden
