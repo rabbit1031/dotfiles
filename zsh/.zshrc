@@ -29,21 +29,19 @@ autoload -Uz vcs_info
 zstyle ':vcs_info:git:*'  check-for-changes true
 zstyle ':vcs_info:git:*'  stagedstr         "%F{green}+%f"
 zstyle ':vcs_info:git:*'  unstagedstr       "%F{red}+%f"
-zstyle ':vcs_info:git:*'  formats           "%F{202}(%b%f%c%u%F{202})%f"
-zstyle ':vcs_info:git:*'  actionformats     "%F{202}(%b%f%a%c%u%F{202})%f"
+zstyle ':vcs_info:git:*'  formats           " %F{202}(%b%f%c%u%F{202})%f"
+zstyle ':vcs_info:git:*'  actionformats     " %F{202}(%b%f%a%c%u%F{202})%f"
 
 # prompt
 precmd() { vcs_info }
 setopt prompt_subst
 
 if [[ -z "${SSH_CONNECTION}" ]]; then
-  PROMPT="%F{green}[%n@%m%f (%*)%F{green}]%f: "
+  PROMPT="%F{green}%n%f"
 else
-  PROMPT="%F{yellow}[%n@%m%f (%*)%F{yellow}]%f: "
+  PROMPT="%F{yellow}%n@%m%f"
 fi
-PROMPT+="%F{cyan}%~%f"$'\n'"%# "
-
-RPROMPT='${vcs_info_msg_0_}'
+PROMPT+='${vcs_info_msg_0_} > %F{cyan}%3d%f'$'\n'"%# "
 
 # word separator
 WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
