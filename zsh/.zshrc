@@ -119,3 +119,6 @@ fi
 
 # starship
 [[ -x $(which starship) ]] && eval "$(starship init zsh)"
+
+# zsh
+[[ -s '/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' ]] && source '/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
