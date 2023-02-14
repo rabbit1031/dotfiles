@@ -23,26 +23,6 @@ autoload -Uz colors; colors
 export LSCOLORS="gxfxcxdxbxegedabagacad" # default: exfxcxdxbxegedabagacad
 export LS_COLORS="di=36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
 
-# vcs info
-autoload -Uz vcs_info
-
-zstyle ':vcs_info:git:*'  check-for-changes true
-zstyle ':vcs_info:git:*'  stagedstr         "%F{green}+%f"
-zstyle ':vcs_info:git:*'  unstagedstr       "%F{red}+%f"
-zstyle ':vcs_info:git:*'  formats           " %F{202}(%b%f%c%u%F{202})%f"
-zstyle ':vcs_info:git:*'  actionformats     " %F{202}(%b%f%a%c%u%F{202})%f"
-
-# prompt
-precmd() { vcs_info }
-setopt prompt_subst
-
-if [[ -z "${SSH_CONNECTION}" ]]; then
-  PROMPT="%F{green}%n%f"
-else
-  PROMPT="%F{yellow}%n@%m%f"
-fi
-PROMPT+='${vcs_info_msg_0_} > %F{cyan}%3d%f'$'\n'"%# "
-
 # word separator
 WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 
@@ -137,3 +117,5 @@ fi
 [[ -s "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc" ]] && source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 [[ -s "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc" ]] && source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
+# starship
+[[ -x $(which starship) ]] && eval "$(starship init zsh)"
