@@ -97,7 +97,8 @@ hook_add = '''
   \ 'coc-emoji',
   \ 'coc-phpls',
   \ 'coc-markdownlint',
-  \ 'coc-solargraph'
+  \ 'coc-solargraph',
+  \ 'coc-sh'
   \ ]
   " TextEdit might fail if hidden is not set.
   set hidden
@@ -105,9 +106,6 @@ hook_add = '''
   " Some servers have issues with backup files, see #649.
   set nobackup
   set nowritebackup
-
-  " Give more space for displaying messages.
-  set cmdheight=2
 
   " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
   " delays and poor user experience.
@@ -254,6 +252,9 @@ hook_add = '''
 repo = 'lambdalisue/gina.vim'
 
 [[plugins]]
+repo = 'blueshirts/darcula'
+
+[[plugins]]
 repo = 'itchyny/lightline.vim'
 hook_add = '''
   let g:lightline = {
@@ -275,9 +276,6 @@ hook_add = '''
     \   },
     \ }
 '''
-
-[[plugins]]
-repo = 'blueshirts/darcula'
 
 [[plugins]]
 repo = 'cespare/vim-toml'
