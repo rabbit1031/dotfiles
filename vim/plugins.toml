@@ -8,20 +8,23 @@ repo = 'ryanoasis/vim-devicons'
 repo = 'kristijanhusak/defx-icons'
 
 [[plugins]]
+repo = 'kristijanhusak/defx-git'
+
+[[plugins]]
 repo = 'Shougo/defx.nvim'
 hook_add = '''
   nnoremap <silent> ff :Defx<CR>
 
   call defx#custom#option('_', {
-    \ 'columns': 'indent:icons:filename:mark',
+    \ 'columns': 'indent:git:icons:space:filename:mark',
     \ 'show_ignored_files': 1,
 	  \ 'split': 'floating',
-    \ 'floating_preview': 1,
-    \ 'vertical_preview': 1,
-    \ 'wincol': float2nr(&columns * 0.1),
     \ 'winrow': 5,
+    \ 'wincol': float2nr(&columns * 0.1),
     \ 'winheight': &lines - 10,
     \ 'winwidth': float2nr(&columns * 0.4),
+    \ 'floating_preview': 1,
+    \ 'vertical_preview': 1,
     \ 'preview_height': &lines - 10,
     \ 'preview_width': float2nr(&columns * 0.4),
 	  \ })
@@ -30,8 +33,10 @@ hook_add = '''
 
   function! s:defx_my_settings() abort
     nnoremap <silent><buffer><expr> <CR>
-      \  defx#is_directory() ? defx#do_action('open_directory') : defx#do_action('multi', ['quit', ['drop', 'tabnew']])
+      \  defx#is_directory() ? 
+      \  defx#do_action('open_directory') : defx#do_action('multi', ['quit', ['drop', 'tabnew']])
     nnoremap <silent><buffer><expr> v     defx#do_action('multi', ['quit', ['open', 'vsplit']])
+    nnoremap <silent><buffer><expr> s     defx#do_action('multi', ['quit', ['open', 'split']])
     nnoremap <silent><buffer><expr> o     defx#do_action('open_tree', 'toggle')
     nnoremap <silent><buffer><expr> i     defx#do_action('toggle_ignored_files')
     nnoremap <silent><buffer><expr> j     'j' . defx#do_action('preview')
