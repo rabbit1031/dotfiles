@@ -54,3 +54,5 @@ fi
 if  [ -x "$(which fish)" ]; then
   alias tmux='SHELL=$(which fish) tmux'
 fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
