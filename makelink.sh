@@ -36,7 +36,12 @@ function link_neovimfiles() {
   ln ${ln_options[*]} ${DOTFILES_DIR}/vim/plugins.toml ${HOME}/.config/nvim/plugins.toml
 }
 
+function link_starshipfiles() {
+  ln ${ln_options[*]} ${DOTFILES_DIR}/starship.toml ${HOME}/.config/starship.toml
+}
+
 link_bashfiles
 link_zshfiles
 link_neovimfiles
+link_starshipfiles
 
