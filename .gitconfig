@@ -1,0 +1,6 @@
+[user]
+  name = rabbit1031
+  email = rabbit1031@users.noreply.github.com
+
+[alias]
+  graph = log --graph --pretty=oneline --abbrev-commit

@@ -40,8 +40,13 @@ function link_starshipfiles() {
   ln ${ln_options[*]} ${DOTFILES_DIR}/starship.toml ${HOME}/.config/starship.toml
 }
 
+function link_gitfiles() {
+  ln ${ln_options[*]} ${DOTFILES_DIR}/.gitconfig ${HOME}/.gitconfig
+}
+
 link_bashfiles
 link_zshfiles
 link_neovimfiles
 link_starshipfiles
+link_gitfiles
 
