@@ -2,5 +2,8 @@
   name = rabbit1031
   email = rabbit1031@users.noreply.github.com
 
+[core]
+  excludesfile = ~/.gitignore_global
+
 [alias]
   graph = log --graph --pretty=oneline --abbrev-commit

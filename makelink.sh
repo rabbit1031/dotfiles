@@ -42,6 +42,7 @@ function link_starshipfiles() {
 
 function link_gitfiles() {
   ln ${ln_options[*]} ${DOTFILES_DIR}/.gitconfig ${HOME}/.gitconfig
+  ln ${ln_options[*]} ${DOTFILES_DIR}/.gitignore_global ${HOME}/.gitignore_global
 }
 
 link_bashfiles
