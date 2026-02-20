@@ -6,6 +6,7 @@
 # Behavior & Conventions
 - Maintain consistency with existing project coding styles and architectural patterns.
 - Keep responses concise and direct, following a professional CLI agent style.
+- When staging files using `git add`, explicitly explain to the user the rationale behind selecting those specific files or directories.
 
 ## Memories
 - Use the following in commit messages:

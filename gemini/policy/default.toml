@@ -9,10 +9,10 @@
 # 許可ルール (action = "allow")
 # ==========================================
 
-# Gitの読み取り専用操作を許可
+# Gitの読み取り専用操作およびコミット操作を許可
 [[rules]]
 toolName = "run_shell_command"
-commandRegex = "^git (status|log|diff|branch|show|ls-files.*)$"
+commandRegex = "^git (status|log|diff|branch|show|ls-files|commit).*$"
 action = "allow"
 priority = 100
 
@@ -34,10 +34,10 @@ priority = 100
 # 確認ルール (action = "ask_user")
 # ==========================================
 
-# push などの状態変更を伴うGit操作は確認対象にする
+# 状態変更を伴う特定のGit操作 (add, push, amendなど) は確認対象にする
 [[rules]]
 toolName = "run_shell_command"
-commandRegex = "^git push.*$"
+commandRegex = "^git (add|push|commit.*--amend).*$"
 action = "ask_user"
 priority = 200
 
