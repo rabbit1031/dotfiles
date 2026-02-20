@@ -1,0 +1,67 @@
+# ==========================================
+# Gemini CLI Policy Rules
+# ==========================================
+# 💡 Note: `priority` は数値が大きいほど優先順位が高くなります。
+# 競合するルールがある場合、この数値で評価順が決まります。
+# see: https://geminicli.com/docs/reference/policy-engine/#priority-system-and-tiers
+
+# ==========================================
+# 許可ルール (action = "allow")
+# ==========================================
+
+# Gitの読み取り専用操作を許可
+[[rules]]
+toolName = "run_shell_command"
+commandRegex = "^git (status|log|diff|branch|show|ls-files.*)$"
+action = "allow"
+priority = 100
+
+# 安全なファイル一覧表示コマンドを許可
+[[rules]]
+toolName = "run_shell_command"
+commandRegex = "^(ls|ll|la|tree)($| .*)"
+action = "allow"
+priority = 100
+
+# 特定のGradleタスクを許可
+[[rules]]
+toolName = "run_shell_command"
+commandRegex = "^\\./gradlew (tasks|dependencies|projects|properties|--version|test)$"
+action = "allow"
+priority = 100
+
+# ==========================================
+# 確認ルール (action = "ask_user")
+# ==========================================
+
+# push などの状態変更を伴うGit操作は確認対象にする
+[[rules]]
+toolName = "run_shell_command"
+commandRegex = "^git push.*$"
+action = "ask_user"
+priority = 200
+
+# ==========================================
+# 拒否ルール (action = "deny")
+# ==========================================
+
+# 破壊的なGit操作 (強制プッシュやハードリセットなど) を拒否
+[[rules]]
+toolName = "run_shell_command"
+commandRegex = "^git (push.*-f|reset --hard.*|clean -fd.*)$"
+action = "deny"
+priority = 300
+
+# rm コマンド等のファイル削除操作を一律拒否
+[[rules]]
+toolName = "run_shell_command"
+commandPrefix = "rm "
+action = "deny"
+priority = 300
+
+# 機密情報への直接アクセスを拒否
+[[rules]]
+toolName = "run_shell_command"
+commandRegex = "^(cat ~/.ssh/.*|env|printenv)$"
+action = "deny"
+priority = 300

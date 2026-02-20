@@ -1,0 +1,22 @@
+{
+  "security": {
+    "auth": {
+      "selectedType": "oauth-personal"
+    }
+  },
+  "general": {
+    "previewFeatures": true,
+    "vimMode": false,
+    "enablePromptCompletion": true
+  },
+  "hasSeenIdeIntegrationNudge": true,
+  "ide": {
+    "enabled": true
+  },
+  "ui": {
+    "theme": "GitHub"
+  },
+  "experimental": {
+    "plan": true
+  }
+}

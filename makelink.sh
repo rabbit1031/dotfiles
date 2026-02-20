@@ -45,9 +45,17 @@ function link_gitfiles() {
   ln ${ln_options[*]} ${DOTFILES_DIR}/.gitignore_global ${HOME}/.gitignore_global
 }
 
+function link_geminifiles() {
+  ! test -d ${HOME}/.gemini/policy && mkdir -pv ${HOME}/.gemini/policy
+  ln ${ln_options[*]} ${DOTFILES_DIR}/gemini/settings.json ${HOME}/.gemini/settings.json
+  ln ${ln_options[*]} ${DOTFILES_DIR}/gemini/GEMINI.md ${HOME}/.gemini/GEMINI.md
+  ln ${ln_options[*]} ${DOTFILES_DIR}/gemini/policy/default.toml ${HOME}/.gemini/policy/default.toml
+}
+
 link_bashfiles
 link_zshfiles
 link_neovimfiles
 link_starshipfiles
 link_gitfiles
+link_geminifiles
 
