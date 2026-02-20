@@ -19,7 +19,7 @@ priority = 100
 # 安全なファイル一覧表示コマンドを許可
 [[rules]]
 toolName = "run_shell_command"
-commandRegex = "^(ls|ll|la|tree)($| .*)"
+commandRegex = "^(ls|tree)($| .*)"
 action = "allow"
 priority = 100
 
