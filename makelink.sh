@@ -32,7 +32,7 @@ function link_zshfiles() {
 
 function link_neovimfiles() {
   ! test -d ${HOME}/.config && mkdir -pv ${HOME}/.config
-  ln ${ln_options[*]} ${DOTFILES_DIR}/nvim ${HOME}/.config/nvim
+  ln ${ln_options[*]} -n ${DOTFILES_DIR}/nvim ${HOME}/.config/nvim
 }
 
 function link_starshipfiles() {
@@ -45,10 +45,9 @@ function link_gitfiles() {
 }
 
 function link_geminifiles() {
-  ! test -d ${HOME}/.gemini/policy && mkdir -pv ${HOME}/.gemini/policy
   ln ${ln_options[*]} ${DOTFILES_DIR}/gemini/settings.json ${HOME}/.gemini/settings.json
   ln ${ln_options[*]} ${DOTFILES_DIR}/gemini/GEMINI.md ${HOME}/.gemini/GEMINI.md
-  ln ${ln_options[*]} ${DOTFILES_DIR}/gemini/policy/default.toml ${HOME}/.gemini/policy/default.toml
+  ln ${ln_options[*]} -n ${DOTFILES_DIR}/gemini/policies ${HOME}/.gemini/policies
 }
 
 link_bashfiles

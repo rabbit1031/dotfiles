@@ -6,62 +6,62 @@
 # see: https://geminicli.com/docs/reference/policy-engine/#priority-system-and-tiers
 
 # ==========================================
-# Allow Rules (action = "allow")
+# Allow Rules (decision = "allow")
 # ==========================================
 
 # Allow read-only Git operations and commit operations
-[[rules]]
+[[rule]]
 toolName = "run_shell_command"
 commandRegex = "^git (status|log|diff|branch|show|ls-files|commit).*$"
-action = "allow"
+decision = "allow"
 priority = 100
 
 # Allow safe file listing commands
-[[rules]]
+[[rule]]
 toolName = "run_shell_command"
 commandRegex = "^(ls|tree)($| .*)"
-action = "allow"
+decision = "allow"
 priority = 100
 
 # Allow specific Gradle tasks
-[[rules]]
+[[rule]]
 toolName = "run_shell_command"
 commandRegex = "^\\./gradlew (tasks|dependencies|projects|properties|--version|test)$"
-action = "allow"
+decision = "allow"
 priority = 100
 
 # ==========================================
-# Ask User Rules (action = "ask_user")
+# Ask User Rules (decision = "ask_user")
 # ==========================================
 
 # Require confirmation for specific Git operations that involve state changes (add, push, amend, etc.)
-[[rules]]
+[[rule]]
 toolName = "run_shell_command"
 commandRegex = "^git (add|push|commit.*--amend).*$"
-action = "ask_user"
+decision = "ask_user"
 priority = 200
 
 # ==========================================
-# Deny Rules (action = "deny")
+# Deny Rules (decision = "deny")
 # ==========================================
 
 # Deny destructive Git operations (force push, hard reset, etc.)
-[[rules]]
+[[rule]]
 toolName = "run_shell_command"
 commandRegex = "^git (push.*-f|reset --hard.*|clean -fd.*)$"
-action = "deny"
+decision = "deny"
 priority = 300
 
 # Uniformly deny file deletion operations such as the rm command
-[[rules]]
+[[rule]]
 toolName = "run_shell_command"
 commandPrefix = "rm "
-action = "deny"
+decision = "deny"
 priority = 300
 
 # Deny direct access to sensitive information
-[[rules]]
+[[rule]]
 toolName = "run_shell_command"
 commandRegex = "^(cat ~/.ssh/.*|env|printenv)$"
-action = "deny"
+decision = "deny"
 priority = 300
