@@ -125,7 +125,8 @@ fi
 # starship
 (( $+commands[starship] )) && eval "$(starship init zsh)"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# fzf
+(( $+commands[fzf] )) && source <(fzf --zsh)
 
 # SDKMAN
 export SDKMAN_DIR="${BREW_PREFIX}/opt/sdkman-cli/libexec"
