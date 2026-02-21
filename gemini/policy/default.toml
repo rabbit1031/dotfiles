@@ -1,29 +1,29 @@
 # ==========================================
 # Gemini CLI Policy Rules
 # ==========================================
-# 💡 Note: `priority` は数値が大きいほど優先順位が高くなります。
-# 競合するルールがある場合、この数値で評価順が決まります。
+# 💡 Note: The higher the `priority` value, the higher the priority.
+# In case of conflicting rules, this value determines the evaluation order.
 # see: https://geminicli.com/docs/reference/policy-engine/#priority-system-and-tiers
 
 # ==========================================
-# 許可ルール (action = "allow")
+# Allow Rules (action = "allow")
 # ==========================================
 
-# Gitの読み取り専用操作およびコミット操作を許可
+# Allow read-only Git operations and commit operations
 [[rules]]
 toolName = "run_shell_command"
 commandRegex = "^git (status|log|diff|branch|show|ls-files|commit).*$"
 action = "allow"
 priority = 100
 
-# 安全なファイル一覧表示コマンドを許可
+# Allow safe file listing commands
 [[rules]]
 toolName = "run_shell_command"
 commandRegex = "^(ls|tree)($| .*)"
 action = "allow"
 priority = 100
 
-# 特定のGradleタスクを許可
+# Allow specific Gradle tasks
 [[rules]]
 toolName = "run_shell_command"
 commandRegex = "^\\./gradlew (tasks|dependencies|projects|properties|--version|test)$"
@@ -31,10 +31,10 @@ action = "allow"
 priority = 100
 
 # ==========================================
-# 確認ルール (action = "ask_user")
+# Ask User Rules (action = "ask_user")
 # ==========================================
 
-# 状態変更を伴う特定のGit操作 (add, push, amendなど) は確認対象にする
+# Require confirmation for specific Git operations that involve state changes (add, push, amend, etc.)
 [[rules]]
 toolName = "run_shell_command"
 commandRegex = "^git (add|push|commit.*--amend).*$"
@@ -42,24 +42,24 @@ action = "ask_user"
 priority = 200
 
 # ==========================================
-# 拒否ルール (action = "deny")
+# Deny Rules (action = "deny")
 # ==========================================
 
-# 破壊的なGit操作 (強制プッシュやハードリセットなど) を拒否
+# Deny destructive Git operations (force push, hard reset, etc.)
 [[rules]]
 toolName = "run_shell_command"
 commandRegex = "^git (push.*-f|reset --hard.*|clean -fd.*)$"
 action = "deny"
 priority = 300
 
-# rm コマンド等のファイル削除操作を一律拒否
+# Uniformly deny file deletion operations such as the rm command
 [[rules]]
 toolName = "run_shell_command"
 commandPrefix = "rm "
 action = "deny"
 priority = 300
 
-# 機密情報への直接アクセスを拒否
+# Deny direct access to sensitive information
 [[rules]]
 toolName = "run_shell_command"
 commandRegex = "^(cat ~/.ssh/.*|env|printenv)$"
