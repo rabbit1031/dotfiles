@@ -4,6 +4,11 @@
 # 💡 Note: The higher the `priority` value, the higher the priority.
 # In case of conflicting rules, this value determines the evaluation order.
 # see: https://geminicli.com/docs/reference/policy-engine/#priority-system-and-tiers
+#
+# 💡 Note: `commandRegex` for `run_shell_command` matches against the JSON payload.
+# e.g., `{"command":"git status"}`.
+# Do not use `^` or `$` anchors because they apply to the entire JSON string.
+# see: https://geminicli.com/docs/reference/policy-engine/#toml-rule-schema
 
 # ==========================================
 # Allow Rules (decision = "allow")
@@ -12,21 +17,21 @@
 # Allow read-only Git operations and commit operations
 [[rule]]
 toolName = "run_shell_command"
-commandRegex = "^git (status|log|diff|branch|show|ls-files|commit).*$"
+commandRegex = "git (status|log|diff|branch|show|ls-files|commit).*"
 decision = "allow"
 priority = 100
 
 # Allow safe file listing commands
 [[rule]]
 toolName = "run_shell_command"
-commandRegex = "^(ls|tree)($| .*)"
+commandRegex = "(ls|tree).*"
 decision = "allow"
 priority = 100
 
 # Allow specific Gradle tasks
 [[rule]]
 toolName = "run_shell_command"
-commandRegex = "^\\./gradlew (tasks|dependencies|projects|properties|--version|test)$"
+commandRegex = "\\./gradlew (tasks|dependencies|projects|properties|--version|test)"
 decision = "allow"
 priority = 100
 
@@ -37,7 +42,7 @@ priority = 100
 # Require confirmation for specific Git operations that involve state changes (add, push, amend, etc.)
 [[rule]]
 toolName = "run_shell_command"
-commandRegex = "^git (add|push|commit.*--amend).*$"
+commandRegex = "git (add|push|commit.*--amend).*"
 decision = "ask_user"
 priority = 200
 
@@ -48,7 +53,7 @@ priority = 200
 # Deny destructive Git operations (force push, hard reset, etc.)
 [[rule]]
 toolName = "run_shell_command"
-commandRegex = "^git (push.*-f|reset --hard.*|clean -fd.*)$"
+commandRegex = "git (push.*-f|reset --hard.*|clean -fd.*).*"
 decision = "deny"
 priority = 300
 
@@ -62,6 +67,6 @@ priority = 300
 # Deny direct access to sensitive information
 [[rule]]
 toolName = "run_shell_command"
-commandRegex = "^(cat ~/.ssh/.*|env|printenv)$"
+commandRegex = "(cat ~/.ssh/.*|env|printenv).*"
 decision = "deny"
 priority = 300
