@@ -31,9 +31,8 @@ function link_zshfiles() {
 }
 
 function link_neovimfiles() {
-  ! test -d ${HOME}/.config/nvim && mkdir -pv ${HOME}/.config/nvim
-  ln ${ln_options[*]} ${DOTFILES_DIR}/vim/init.vim ${HOME}/.config/nvim/init.vim
-  ln ${ln_options[*]} ${DOTFILES_DIR}/vim/plugins.toml ${HOME}/.config/nvim/plugins.toml
+  ! test -d ${HOME}/.config && mkdir -pv ${HOME}/.config
+  ln ${ln_options[*]} ${DOTFILES_DIR}/nvim ${HOME}/.config/nvim
 }
 
 function link_starshipfiles() {
