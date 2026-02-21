@@ -2,14 +2,24 @@
 # ~/.zshrc
 #
 
-PLATFORM=$(uname -s)
+if (( $+commands[brew] )); then
+  BREW_PREFIX=$(brew --prefix)
+fi
 
-path=(
-  /usr/local/opt/ruby/bin(N-/)
-  $path
-)
+# ##############################
+# Utilities
+# ##############################
+function isLinux() {
+  [[ "$OSTYPE" == linux* ]]
+}
 
-[[ -r ${HOME}/.zshrc.${PLATFORM} ]] && source ${HOME}/.zshrc.${PLATFORM}
+function isDarwin() {
+  [[ "$OSTYPE" == darwin* ]]
+}
+
+if isLinux; then
+  source ${HOME}/.zshrc.Linux
+fi
 
 zmodload zsh/zpty
 
@@ -29,24 +39,28 @@ WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 # ##############################
 # completion
 # ##############################
+
+fpath=(
+  ${BREW_PREFIX}/share/zsh/site-functions(N-/)
+  $fpath
+)
+
 autoload -Uz compinit && compinit
 
-# for dotfiles
+# match hidden files without explicit dot
 setopt globdots
 
+# completion styling and formatting
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' format "%F{yellow}(・ω・)つ %B%d%b%f"
 zstyle ':completion:*' group-name ''
-
 zstyle ':completion:*' menu yes select=2
-
-# color
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-# case-insensitive
+# case-insensitive completion
 zstyle ':completion:*' matcher-list "m:{[:lower:]}={[:upper:]}"
 
-# enable cache
+# enable completion caching
 zstyle ':completion:*' use-cache true
 
 # ##############################
@@ -56,26 +70,21 @@ HISTFILE=${HOME}/.zsh_history
 HISTSIZE=10000
 SAVEHIST=100000
 
-# share history
-setopt append_history
-setopt share_history
+# share history across sessions and append instead of overwrite
+setopt append_history share_history
 
-# history with timestamp
+# save timestamp and duration
 setopt extended_history
 alias history="history -t '%F %T'"
 
-# ignore "history" command
-setopt hist_no_store
+# history ignore rules:
+# - hist_no_store: exclude 'history' command itself
+# - hist_ignore_all_dups: keep only the latest instance of duplicates
+# - hist_reduce_blanks: remove extra spaces
+# - hist_ignore_space: ignore commands starting with a space
+setopt hist_no_store hist_ignore_all_dups hist_reduce_blanks hist_ignore_space
 
-# ignore duplicates
-setopt hist_ignore_all_dups
-
-# ignore extra blanks
-setopt hist_reduce_blanks
-
-setopt hist_ignore_space
-
-# disable less history
+# disable less history file
 export LESSHISTFILE=/dev/null
 
 # ##############################
@@ -92,9 +101,9 @@ alias diff='diff -s'
 alias grep='grep --color=auto'
 alias less='less -M'
 
-if [ $PLATFORM = "Darwin" ]; then
+if isDarwin; then
   alias ls="command ls -AFGh"
-elif [ $PLATFORM = "Linux" ]; then
+elif isLinux; then
   alias ls="command ls -AFh --color=auto"
 else
   alias ls="command ls -AFh"
@@ -102,26 +111,27 @@ fi
 
 alias pip-update="pip3 list --outdated --format json | jq -r '.[].name' | xargs -p pip3 install -U"
 
-if command nvim --version > /dev/null 2>&1; then
+if (( $+commands[nvim] )); then
   alias vi='nvim'
   alias vim='nvim'
   export EDITOR='nvim'
   export DIFFPROG='nvim -d'
-elif command vim --version > /dev/null 2>&1; then
+elif (( $+commands[vim] )); then
   alias vi='vim'
   export EDITOR='vim'
   export DIFFPROG='vimdiff'
 fi
 
-# google-cloud-sdk
-[[ -s "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc" ]] && source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-[[ -s "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc" ]] && source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
-
 # starship
-[[ -x $(which starship) ]] && eval "$(starship init zsh)"
-
-# zsh
-[[ -s '/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' ]] && source '/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
-[[ -s '/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh' ]] && source '/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh'
+(( $+commands[starship] )) && eval "$(starship init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# SDKMAN
+export SDKMAN_DIR="${BREW_PREFIX}/opt/sdkman-cli/libexec"
+[[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
+
+# zsh plugins (MUST be loaded last)
+[[ -s "${BREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && source "${BREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+[[ -s "${BREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] && source "${BREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
