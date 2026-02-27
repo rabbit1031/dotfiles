@@ -13,6 +13,7 @@ The following rules MUST be followed with the highest priority under any circums
    - If a task is terminated due to errors or interruption, ALWAYS restore the environment to a clean state, leaving no unstable partial changes, unless explicitly instructed otherwise.
 7. **Automation Limits**: If a tool execution fails multiple times or faces permission/environment issues, DO NOT obsessively retry. Immediately stop, report the situation to the user, and request manual intervention.
 8. **10-Step Progress Reporting**: ALWAYS pause and report progress using `notify_user` every 10 steps of internal execution to avoid long periods of silence.
+9. **Atomic Command Execution**: ALWAYS break down shell command executions into their smallest units. Do NOT chain multiple commands (e.g., using `&&`, `;`, `||`, etc.) within a single tool call, as this undermines the Policy Engine's ability to validate and authorize individual operations.
 
 # BEHAVIOR & CONVENTIONS
 - **Plan Mode**: Proactively use Plan Mode (task boundaries & artifacts) for complex tasks, multi-file changes, or when implementation strategies are not immediately obvious.
