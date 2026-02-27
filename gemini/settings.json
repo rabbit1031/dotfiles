@@ -7,7 +7,12 @@
   "general": {
     "previewFeatures": true,
     "vimMode": false,
-    "enablePromptCompletion": true
+    "enablePromptCompletion": true,
+    "sessionRetention": {
+      "warningAcknowledged": true,
+      "enabled": true,
+      "maxAge": "120d"
+    }
   },
   "hasSeenIdeIntegrationNudge": true,
   "ide": {
@@ -18,5 +23,17 @@
   },
   "experimental": {
     "plan": true
+  },
+  "mcpServers": {
+    "notion": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://mcp.notion.com/mcp"]
+    },
+    "github": {
+      "httpUrl": "https://api.githubcopilot.com/mcp",
+      "headers": {
+        "Authorization": "Bearer $GITHUB_MCP_PAT"
+      }
+    }
   }
 }
