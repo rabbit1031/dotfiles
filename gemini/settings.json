@@ -19,7 +19,13 @@
     "enabled": true
   },
   "ui": {
-    "theme": "GitHub"
+    "theme": "GitHub",
+    "footer": {
+      "hideContextPercentage": false
+    },
+    "showMemoryUsage": true,
+    "showCitations": true,
+    "showModelInfoInChat": true
   },
   "experimental": {
     "plan": true
@@ -27,7 +33,11 @@
   "mcpServers": {
     "notion": {
       "command": "npx",
-      "args": ["-y", "mcp-remote", "https://mcp.notion.com/mcp"]
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://mcp.notion.com/mcp"
+      ]
     },
     "github": {
       "httpUrl": "https://api.githubcopilot.com/mcp",
@@ -37,7 +47,14 @@
     },
     "homebrew": {
       "command": "brew",
-      "args": ["mcp-server"]
+      "args": [
+        "mcp-server"
+      ]
+    }
+  },
+  "tools": {
+    "shell": {
+      "showColor": true
     }
   }
 }
