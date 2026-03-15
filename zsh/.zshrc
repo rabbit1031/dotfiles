@@ -2,8 +2,8 @@
 # ~/.zshrc
 #
 
-if (( $+commands[brew] )); then
-  BREW_PREFIX=$(brew --prefix)
+if [[ -f /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 # ##############################
@@ -41,7 +41,7 @@ WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 # ##############################
 
 fpath=(
-  ${BREW_PREFIX}/share/zsh/site-functions(N-/)
+  ${HOMEBREW_PREFIX}/share/zsh/site-functions(N-/)
   $fpath
 )
 
@@ -129,10 +129,10 @@ fi
 (( $+commands[fzf] )) && source <(fzf --zsh)
 
 # SDKMAN
-export SDKMAN_DIR="${BREW_PREFIX}/opt/sdkman-cli/libexec"
+export SDKMAN_DIR="${HOMEBREW_PREFIX}/opt/sdkman-cli/libexec"
 [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
 
 # zsh plugins (MUST be loaded last)
-[[ -s "${BREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && source "${BREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-[[ -s "${BREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] && source "${BREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+[[ -s "${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && source "${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+[[ -s "${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] && source "${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
