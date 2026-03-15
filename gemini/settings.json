@@ -25,7 +25,8 @@
     },
     "showMemoryUsage": true,
     "showCitations": true,
-    "showModelInfoInChat": true
+    "showModelInfoInChat": true,
+    "inlineThinkingMode": "full"
   },
   "experimental": {
     "plan": true
