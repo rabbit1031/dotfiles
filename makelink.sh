@@ -18,6 +18,25 @@ for option in "$@"; do
   esac
 done
 
+function safe_link_dir() {
+  local src="$1"
+  local dest="$2"
+  
+  if [ -L "${dest}" ]; then
+    # シンボリックリンクが存在する場合は削除
+    rm -f "${dest}"
+  elif [ -d "${dest}" ]; then
+    # 通常のディレクトリが存在する場合はバックアップ
+    echo "Warning: ${dest} is an existing standard directory. Backing it up to ${dest}.bak"
+    mv "${dest}" "${dest}.bak"
+  elif [ -e "${dest}" ]; then
+    # その他のファイルとして存在する場合は削除
+    rm -f "${dest}"
+  fi
+  
+  ln ${ln_options[*]} -sn "${src}" "${dest}"
+}
+
 function link_bashfiles() {
   ln ${ln_options[*]} ${DOTFILES_DIR}/bash/.bash_profile ${HOME}/.bash_profile
   ln ${ln_options[*]} ${DOTFILES_DIR}/bash/.bashrc ${HOME}/.bashrc
@@ -32,7 +51,7 @@ function link_zshfiles() {
 
 function link_neovimfiles() {
   ! test -d ${HOME}/.config && mkdir -pv ${HOME}/.config
-  ln ${ln_options[*]} -n ${DOTFILES_DIR}/nvim ${HOME}/.config/nvim
+  safe_link_dir "${DOTFILES_DIR}/nvim" "${HOME}/.config/nvim"
 }
 
 function link_starshipfiles() {
@@ -47,7 +66,7 @@ function link_gitfiles() {
 function link_geminifiles() {
   ln ${ln_options[*]} ${DOTFILES_DIR}/gemini/settings.json ${HOME}/.gemini/settings.json
   ln ${ln_options[*]} ${DOTFILES_DIR}/gemini/GEMINI.md ${HOME}/.gemini/GEMINI.md
-  ln ${ln_options[*]} -n ${DOTFILES_DIR}/gemini/policies ${HOME}/.gemini/policies
+  safe_link_dir "${DOTFILES_DIR}/gemini/policies" "${HOME}/.gemini/policies"
 }
 
 link_bashfiles
