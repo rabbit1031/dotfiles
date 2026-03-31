@@ -23,14 +23,14 @@ function safe_link_dir() {
   local dest="$2"
   
   if [ -L "${dest}" ]; then
-    # シンボリックリンクが存在する場合は削除
+    # Remove if it is already a symlink
     rm -f "${dest}"
   elif [ -d "${dest}" ]; then
-    # 通常のディレクトリが存在する場合はバックアップ
+    # Backup if it is a standard directory
     echo "Warning: ${dest} is an existing standard directory. Backing it up to ${dest}.bak"
     mv "${dest}" "${dest}.bak"
   elif [ -e "${dest}" ]; then
-    # その他のファイルとして存在する場合は削除
+    # Remove if it exists as another type of file
     rm -f "${dest}"
   fi
   
