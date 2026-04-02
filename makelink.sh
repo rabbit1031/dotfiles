@@ -69,10 +69,15 @@ function link_geminifiles() {
   safe_link_dir "${DOTFILES_DIR}/gemini/policies" "${HOME}/.gemini/policies"
 }
 
+function link_npmfiles() {
+  ln ${ln_options[*]} ${DOTFILES_DIR}/.npmrc ${HOME}/.npmrc
+}
+
 link_bashfiles
 link_zshfiles
 link_neovimfiles
 link_starshipfiles
 link_gitfiles
 link_geminifiles
+link_npmfiles
 
