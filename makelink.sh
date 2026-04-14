@@ -73,6 +73,11 @@ function link_npmfiles() {
   ln ${ln_options[*]} ${DOTFILES_DIR}/.npmrc ${HOME}/.npmrc
 }
 
+function link_ghosttyfiles() {
+  ! test -d ${HOME}/.config/ghostty && mkdir -pv ${HOME}/.config/ghostty
+  ln ${ln_options[*]} ${DOTFILES_DIR}/config.ghostty ${HOME}/.config/ghostty/config.ghostty
+}
+
 link_bashfiles
 link_zshfiles
 link_neovimfiles
@@ -80,4 +85,5 @@ link_starshipfiles
 link_gitfiles
 link_geminifiles
 link_npmfiles
+link_ghosttyfiles
 
