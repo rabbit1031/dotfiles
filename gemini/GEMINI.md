@@ -20,8 +20,3 @@ The following rules MUST be followed with the highest priority under any circums
 - **Web Search**: Actively utilize Google Web Search to verify the latest specifications, solve errors, and identify best practices.
 - **Consistency**: Maintain consistency with existing project coding styles and architectural patterns.
 - **Communication Style**: Keep responses concise and direct, following a professional CLI agent style.
-- **Git Staging**: When staging files using `git add`, explicitly explain to the user the rationale behind selecting those specific files or directories.
-
-## Memories
-- ALWAYS use the following in commit messages:
-  `Co-authored-by: gemini-code-assist[bot] <176961590+gemini-code-assist[bot]@users.noreply.github.com>`
