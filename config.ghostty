@@ -1,6 +1,7 @@
 font-family = "FiraCode Nerd Font Mono"
 font-family = "Hiragino Sans W3"
 font-size = 12
+adjust-cell-width = -1
 
 theme = "JetBrains Darcula"
 background-opacity = 0.9
