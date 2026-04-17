@@ -12,6 +12,9 @@
       "warningAcknowledged": true,
       "enabled": true,
       "maxAge": "120d"
+    },
+    "plan": {
+      "enabled": true
     }
   },
   "hasSeenIdeIntegrationNudge": true,
@@ -28,9 +31,7 @@
     "showModelInfoInChat": true,
     "inlineThinkingMode": "full"
   },
-  "experimental": {
-    "plan": true
-  },
+  "experimental": {},
   "mcpServers": {
     "notion": {
       "command": "npx",
@@ -57,5 +58,8 @@
     "shell": {
       "showColor": true
     }
+  },
+  "agents": {
+    "overrides": {}
   }
 }
