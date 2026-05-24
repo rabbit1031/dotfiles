@@ -8,6 +8,11 @@ elif [[ -x /usr/local/bin/brew ]]; then
   eval "$(/usr/local/bin/brew shellenv)"
 fi
 
+path=(
+  ${HOME}/.antigravity-ide/antigravity-ide/bin(N-/)
+  $path
+)
+
 # ##############################
 # Utilities
 # ##############################
@@ -137,4 +142,3 @@ export SDKMAN_DIR="${HOMEBREW_PREFIX}/opt/sdkman-cli/libexec"
 # zsh plugins (MUST be loaded last)
 [[ -s "${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && source "${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 [[ -s "${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] && source "${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-
