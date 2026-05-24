@@ -1,10 +1,4 @@
 [[plugins]]
-repo = 'Shougo/deol.nvim'
-hook_add = '''
-  nnoremap <silent> tt :Deol -split=floating<CR>
-'''
-
-[[plugins]]
 repo = 'neoclide/coc.nvim'
 merged = 0
 rev = 'release'
