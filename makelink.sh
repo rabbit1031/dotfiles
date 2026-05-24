@@ -73,6 +73,7 @@ function link_claudefiles() {
   ! test -d ${HOME}/.claude && mkdir -pv ${HOME}/.claude
   ln ${ln_options[*]} ${DOTFILES_DIR}/claude/CLAUDE.md ${HOME}/.claude/CLAUDE.md
   ln ${ln_options[*]} ${DOTFILES_DIR}/claude/settings.json ${HOME}/.claude/settings.json
+  ln ${ln_options[*]} ${DOTFILES_DIR}/claude/statusline-command.py ${HOME}/.claude/statusline-command.py
 }
 
 function link_npmfiles() {
