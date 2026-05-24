@@ -73,7 +73,8 @@ function link_claudefiles() {
   ! test -d ${HOME}/.claude && mkdir -pv ${HOME}/.claude
   ln ${ln_options[*]} ${DOTFILES_DIR}/agents/AGENTS.md ${HOME}/.claude/CLAUDE.md
   ln ${ln_options[*]} ${DOTFILES_DIR}/agents/claude/settings.json ${HOME}/.claude/settings.json
-  ln ${ln_options[*]} ${DOTFILES_DIR}/agents/claude/statusline-command.py ${HOME}/.claude/statusline-command.py
+  ! test -d ${HOME}/.config/ccstatusline && mkdir -pv ${HOME}/.config/ccstatusline
+  ln ${ln_options[*]} ${DOTFILES_DIR}/agents/claude/ccstatusline-settings.json ${HOME}/.config/ccstatusline/settings.json
 }
 
 function link_npmfiles() {

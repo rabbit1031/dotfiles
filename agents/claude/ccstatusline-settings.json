@@ -1,0 +1,174 @@
+{
+  "version": 3,
+  "lines": [
+    [
+      {
+        "id": "27076bed-01f2-446e-b9e6-feb52c5aa050",
+        "type": "current-working-dir",
+        "color": "brightCyan",
+        "bold": true
+      },
+      {
+        "id": "50a9b3d5-f172-4635-9d37-d80af7297ba3",
+        "type": "flex-separator",
+        "color": "",
+        "bold": true
+      },
+      {
+        "id": "ca680539-42b0-4c14-965f-40385c3260e2",
+        "type": "git-branch",
+        "color": "brightMagenta",
+        "bold": true
+      },
+      {
+        "id": "63942790-f9d0-4085-b872-a56e8bce3f6e",
+        "type": "separator"
+      },
+      {
+        "id": "98eed477-1972-421d-99ce-62ac236886cd",
+        "type": "git-changes",
+        "color": "brightWhite",
+        "bold": false
+      },
+      {
+        "id": "21cf57cb-f9d6-427d-b971-01f55b903f91",
+        "type": "separator"
+      },
+      {
+        "id": "77048f14-a90e-4590-8f93-ab75227eea02",
+        "type": "git-ahead-behind",
+        "color": "brightWhite",
+        "bold": false
+      },
+      {
+        "id": "c84a2191-c93c-4378-8ea1-813609812335",
+        "type": "separator"
+      },
+      {
+        "id": "c579f71c-57cf-4701-83a4-4b7f12372253",
+        "type": "git-staged-files",
+        "color": "green",
+        "bold": true
+      },
+      {
+        "id": "41a45dfd-5e04-4729-9d14-46c820e66573",
+        "type": "separator"
+      },
+      {
+        "id": "841ac20f-08ec-483c-9ab9-6682d286f384",
+        "type": "git-unstaged-files",
+        "color": "yellow",
+        "bold": true
+      },
+      {
+        "id": "a4f1edc3-c38f-4339-a107-f5cc15274385",
+        "type": "separator"
+      },
+      {
+        "id": "7453aeed-ae0d-4b43-8dfc-ccd7446624f9",
+        "type": "git-untracked-files",
+        "color": "brightRed",
+        "bold": true
+      }
+    ],
+    [
+      {
+        "id": "edb34f58-abf5-4abd-913f-63e1322e3093",
+        "type": "model",
+        "color": "brightBlue",
+        "bold": false
+      },
+      {
+        "id": "1203bf6e-f3ef-47ee-9c5a-df270d46142c",
+        "type": "separator"
+      },
+      {
+        "id": "fce4d3c2-00a4-4c95-82a6-eda93d25b483",
+        "type": "thinking-effort",
+        "color": "brightBlack"
+      },
+      {
+        "id": "f27cdd54-f196-448a-92fc-379bd87765ed",
+        "type": "flex-separator",
+        "color": "brightWhite",
+        "bold": true
+      },
+      {
+        "id": "6690bda5-fac8-4c32-9c5f-13dea4883375",
+        "type": "session-clock",
+        "color": "yellow",
+        "bold": false
+      },
+      {
+        "id": "e0251e3f-a2eb-4ffe-9af5-6b80e6715f37",
+        "type": "separator"
+      },
+      {
+        "id": "ea61161a-c69e-4c7f-89b2-ae5453210156",
+        "type": "compaction-counter",
+        "color": "yellow",
+        "bold": true
+      },
+      {
+        "id": "45a95dbf-357d-47cf-9004-266f1a17b4eb",
+        "type": "separator"
+      },
+      {
+        "id": "5155311c-bfe2-4928-9979-a77509008b7c",
+        "type": "context-bar",
+        "color": "brightWhite",
+        "bold": true,
+        "metadata": {
+          "display": "slider"
+        }
+      },
+      {
+        "id": "e2241b6c-26d3-45cc-aa95-cf2ed5ce4441",
+        "type": "separator"
+      },
+      {
+        "id": "02a54252-5598-4a1e-8af1-26c39c3030d4",
+        "type": "session-usage",
+        "color": "white",
+        "bold": false,
+        "metadata": {
+          "display": "slider"
+        }
+      },
+      {
+        "id": "d6f5bcd3-4ef3-4a33-9187-9c4d7ca9b895",
+        "type": "separator"
+      },
+      {
+        "id": "ffd88803-1203-440b-8989-fbbaf90f1408",
+        "type": "weekly-usage",
+        "color": "brightBlack",
+        "bold": false
+      }
+    ]
+  ],
+  "flexMode": "full-minus-40",
+  "compactThreshold": 60,
+  "colorLevel": 2,
+  "inheritSeparatorColors": false,
+  "globalBold": false,
+  "gitCacheTtlSeconds": 5,
+  "minimalistMode": false,
+  "powerline": {
+    "enabled": false,
+    "separators": [
+      ""
+    ],
+    "separatorInvertBackground": [
+      false
+    ],
+    "startCaps": [],
+    "endCaps": [],
+    "autoAlign": false,
+    "continueThemeAcrossLines": false
+  },
+  "installation": {
+    "method": "auto-update",
+    "packageManager": "npm"
+  }
+}
