@@ -120,10 +120,10 @@
       {
         "id": "efaf4d22-bd6c-4b89-8142-b35cb7b9ba6a",
         "type": "session-usage",
+        "color": "",
         "metadata": {
           "display": "slider"
-        },
-        "color": ""
+        }
       },
       {
         "id": "66041498-2992-4633-9aec-e022559fefc5",
@@ -141,6 +141,15 @@
       {
         "id": "a37addc9-7a84-4939-8f26-9db21f430f24",
         "type": "weekly-usage",
+        "color": "brightBlack"
+      },
+      {
+        "id": "164e379b-8616-4f5c-8896-7727cbf9a4e6",
+        "type": "separator"
+      },
+      {
+        "id": "3a1cead8-aafc-432e-abf7-bef6daf0cb36",
+        "type": "weekly-reset-timer",
         "color": "brightBlack"
       }
     ]
