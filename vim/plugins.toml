@@ -185,15 +185,3 @@ repo = 'lambdalisue/gina.vim'
 
 [[plugins]]
 repo = 'cespare/vim-toml'
-
-[[plugins]]
-repo = 'plasticboy/vim-markdown'
-hook_add = '''
-  let g:vim_markdown_folding_disabled = 1
-'''
-
-[[plugins]]
-repo = 'previm/previm'
-
-[[plugins]]
-repo = 'tyru/open-browser.vim'
