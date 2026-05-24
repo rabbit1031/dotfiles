@@ -3,17 +3,13 @@
   "lines": [
     [
       {
-        "id": "27076bed-01f2-446e-b9e6-feb52c5aa050",
+        "id": "88781dca-01aa-421b-a749-e2e7f2e182b1",
         "type": "current-working-dir",
         "color": "brightCyan",
         "bold": true
-      },
-      {
-        "id": "50a9b3d5-f172-4635-9d37-d80af7297ba3",
-        "type": "flex-separator",
-        "color": "",
-        "bold": true
-      },
+      }
+    ],
+    [
       {
         "id": "ca680539-42b0-4c14-965f-40385c3260e2",
         "type": "git-branch",
@@ -73,25 +69,22 @@
     ],
     [
       {
-        "id": "edb34f58-abf5-4abd-913f-63e1322e3093",
+        "id": "8946f015-d6f3-478b-a013-643ccc322b41",
         "type": "model",
-        "color": "brightBlue",
-        "bold": false
+        "color": ""
       },
       {
-        "id": "1203bf6e-f3ef-47ee-9c5a-df270d46142c",
+        "id": "fab0f274-bf4a-4a98-bce7-3c66b7411177",
         "type": "separator"
       },
       {
-        "id": "fce4d3c2-00a4-4c95-82a6-eda93d25b483",
+        "id": "9afb5c6e-3377-443e-b667-cf23b2d15cc0",
         "type": "thinking-effort",
         "color": "brightBlack"
       },
       {
-        "id": "f27cdd54-f196-448a-92fc-379bd87765ed",
-        "type": "flex-separator",
-        "color": "brightWhite",
-        "bold": true
+        "id": "59534a27-833e-4768-8a33-98d705c900e2",
+        "type": "separator"
       },
       {
         "id": "6690bda5-fac8-4c32-9c5f-13dea4883375",
@@ -121,29 +114,34 @@
         "metadata": {
           "display": "slider"
         }
-      },
+      }
+    ],
+    [
       {
-        "id": "e2241b6c-26d3-45cc-aa95-cf2ed5ce4441",
-        "type": "separator"
-      },
-      {
-        "id": "02a54252-5598-4a1e-8af1-26c39c3030d4",
+        "id": "efaf4d22-bd6c-4b89-8142-b35cb7b9ba6a",
         "type": "session-usage",
-        "color": "white",
-        "bold": false,
         "metadata": {
           "display": "slider"
-        }
+        },
+        "color": ""
       },
       {
-        "id": "d6f5bcd3-4ef3-4a33-9187-9c4d7ca9b895",
+        "id": "66041498-2992-4633-9aec-e022559fefc5",
         "type": "separator"
       },
       {
-        "id": "ffd88803-1203-440b-8989-fbbaf90f1408",
+        "id": "90f0e55c-82b1-4f9a-af8c-ae5a53aa4988",
+        "type": "reset-timer",
+        "color": ""
+      },
+      {
+        "id": "115f3538-7c66-4e34-9ac5-439de104ed83",
+        "type": "separator"
+      },
+      {
+        "id": "a37addc9-7a84-4939-8f26-9db21f430f24",
         "type": "weekly-usage",
-        "color": "brightBlack",
-        "bold": false
+        "color": "brightBlack"
       }
     ]
   ],
