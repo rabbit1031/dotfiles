@@ -14,7 +14,8 @@
       "maxAge": "120d"
     },
     "plan": {
-      "enabled": true
+      "enabled": true,
+      "directory": ""
     }
   },
   "hasSeenIdeIntegrationNudge": true,
@@ -33,25 +34,11 @@
   },
   "experimental": {},
   "mcpServers": {
-    "notion": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "mcp-remote",
-        "https://mcp.notion.com/mcp"
-      ]
-    },
     "github": {
       "httpUrl": "https://api.githubcopilot.com/mcp",
       "headers": {
         "Authorization": "Bearer $GITHUB_MCP_PAT"
       }
-    },
-    "homebrew": {
-      "command": "brew",
-      "args": [
-        "mcp-server"
-      ]
     }
   },
   "tools": {

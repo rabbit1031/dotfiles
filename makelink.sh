@@ -64,16 +64,16 @@ function link_gitfiles() {
 }
 
 function link_geminifiles() {
-  ln ${ln_options[*]} ${DOTFILES_DIR}/gemini/settings.json ${HOME}/.gemini/settings.json
-  ln ${ln_options[*]} ${DOTFILES_DIR}/gemini/GEMINI.md ${HOME}/.gemini/GEMINI.md
-  safe_link_dir "${DOTFILES_DIR}/gemini/policies" "${HOME}/.gemini/policies"
+  ln ${ln_options[*]} ${DOTFILES_DIR}/agents/gemini/settings.json ${HOME}/.gemini/settings.json
+  ln ${ln_options[*]} ${DOTFILES_DIR}/agents/AGENTS.md ${HOME}/.gemini/GEMINI.md
+  safe_link_dir "${DOTFILES_DIR}/agents/gemini/policies" "${HOME}/.gemini/policies"
 }
 
 function link_claudefiles() {
   ! test -d ${HOME}/.claude && mkdir -pv ${HOME}/.claude
-  ln ${ln_options[*]} ${DOTFILES_DIR}/claude/CLAUDE.md ${HOME}/.claude/CLAUDE.md
-  ln ${ln_options[*]} ${DOTFILES_DIR}/claude/settings.json ${HOME}/.claude/settings.json
-  ln ${ln_options[*]} ${DOTFILES_DIR}/claude/statusline-command.py ${HOME}/.claude/statusline-command.py
+  ln ${ln_options[*]} ${DOTFILES_DIR}/agents/AGENTS.md ${HOME}/.claude/CLAUDE.md
+  ln ${ln_options[*]} ${DOTFILES_DIR}/agents/claude/settings.json ${HOME}/.claude/settings.json
+  ln ${ln_options[*]} ${DOTFILES_DIR}/agents/claude/statusline-command.py ${HOME}/.claude/statusline-command.py
 }
 
 function link_npmfiles() {
