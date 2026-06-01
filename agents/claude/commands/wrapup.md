@@ -16,7 +16,7 @@ argument-hint: "[対象ページ URL（省略可）]"
 ## 2. 対象ページの特定
 
 - `$ARGUMENTS` に Notion ページ URL があれば、それを対象にします。
-- 無ければ `mcp__claude_ai_Notion__notion-search` で「`🤖 Claude Code`」タグを持つ最近のページを検索し、どれが対象かユーザーに確認してください。
+- 無ければ `mcp__claude_ai_Notion__notion-search` で「`🤖 w/ Claude Code`」タグを持つ最近のページを検索し、どれが対象かユーザーに確認してください。
 
 ## 3. 更新
 
