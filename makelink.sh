@@ -76,6 +76,7 @@ function link_claudefiles() {
   ! test -d ${HOME}/.config/ccstatusline && mkdir -pv ${HOME}/.config/ccstatusline
   ln ${ln_options[*]} ${DOTFILES_DIR}/agents/claude/ccstatusline-settings.json ${HOME}/.config/ccstatusline/settings.json
   safe_link_dir "${DOTFILES_DIR}/agents/claude/commands" "${HOME}/.claude/commands"
+  safe_link_dir "${DOTFILES_DIR}/agents/claude/skills" "${HOME}/.claude/skills"
 }
 
 function link_npmfiles() {
