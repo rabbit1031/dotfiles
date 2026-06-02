@@ -32,12 +32,26 @@
       "Bash(gh issue status*)",
       "Bash(gh repo view*)",
       "Bash(gh repo list*)",
+      "Bash(gh repo gitignore*)",
+      "Bash(gh repo license*)",
       "Bash(gh run list*)",
       "Bash(gh run view*)",
       "Bash(gh workflow list*)",
       "Bash(gh workflow view*)",
       "Bash(gh release list*)",
-      "Bash(gh release view*)"
+      "Bash(gh release view*)",
+      "Bash(gh release verify*)",
+      "Bash(gh label list*)",
+      "Bash(gh search*)",
+      "Bash(gh ruleset*)",
+      "Bash(gh cache list*)",
+      "Bash(gh org list*)",
+      "Bash(gh gist list*)",
+      "Bash(gh gist view*)",
+      "Bash(gh project list*)",
+      "Bash(gh project view*)",
+      "Bash(gh project item-list*)",
+      "Bash(gh project field-list*)"
     ],
     "deny": [
       "Bash(git push --force*)",
@@ -64,5 +78,6 @@
   },
   "language": "japanese",
   "effortLevel": "high",
-  "remoteControlAtStartup": true
+  "remoteControlAtStartup": true,
+  "model": "opus"
 }
