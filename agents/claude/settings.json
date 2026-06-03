@@ -79,5 +79,5 @@
   "language": "japanese",
   "effortLevel": "high",
   "remoteControlAtStartup": true,
-  "model": "opus"
+  "agentPushNotifEnabled": true
 }
