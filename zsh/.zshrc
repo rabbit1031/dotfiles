@@ -122,10 +122,12 @@ if (( $+commands[nvim] )); then
   alias vi='nvim'
   alias vim='nvim'
   export EDITOR='nvim'
+  export VISUAL='nvim'
   export DIFFPROG='nvim -d'
 elif (( $+commands[vim] )); then
   alias vi='vim'
   export EDITOR='vim'
+  export VISUAL='vim'
   export DIFFPROG='vimdiff'
 fi
 
