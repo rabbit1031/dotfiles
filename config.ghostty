@@ -12,6 +12,8 @@ unfocused-split-fill = "#666666"
 window-width = 240
 window-height = 60
 
+macos-option-as-alt = left
+
 keybind = ctrl+shift+backslash=new_split:right
 keybind = ctrl+shift+minus=new_split:down
 keybind = ctrl+shift+h=goto_split:left
