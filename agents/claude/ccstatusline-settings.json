@@ -71,7 +71,8 @@
       {
         "id": "8946f015-d6f3-478b-a013-643ccc322b41",
         "type": "model",
-        "color": ""
+        "color": "",
+        "bold": true
       },
       {
         "id": "fab0f274-bf4a-4a98-bce7-3c66b7411177",
@@ -80,7 +81,8 @@
       {
         "id": "9afb5c6e-3377-443e-b667-cf23b2d15cc0",
         "type": "thinking-effort",
-        "color": "brightBlack"
+        "color": "brightBlack",
+        "bold": true
       },
       {
         "id": "59534a27-833e-4768-8a33-98d705c900e2",
@@ -110,7 +112,7 @@
         "id": "5155311c-bfe2-4928-9979-a77509008b7c",
         "type": "context-bar",
         "color": "brightWhite",
-        "bold": true,
+        "bold": false,
         "metadata": {
           "display": "slider"
         }
