@@ -1,6 +1,7 @@
 ---
 name: notion-style
 description: Notion に作業メモ・ノートを作成または更新する際に使用します（kickoff/wrapup や Notes DB への起票・追記を含む）。本文の文体（トンマナ）を本人の書き方＝体言止め・簡潔・コマンド中心に揃えます。
+when_to_use: notion-create-pages または notion-update-page MCP ツールで Notion ページの本文を書く際は、必ずこのスキルのガイドラインを参照すること。
 ---
 
 # Notion 作業メモ 文体ガイド
