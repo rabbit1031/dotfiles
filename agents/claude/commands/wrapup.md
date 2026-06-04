@@ -28,3 +28,15 @@ argument-hint: "[対象ページ URL（省略可）]"
 ## 4. コミット
 
 コミットやプッシュが必要な場合は、既存の権限設定（`settings.json`）と CLAUDE.md のルールに従ってください。`git push` は独断で実行しないこと。
+
+## 5. タスクのクローズ（任意）
+
+kickoff で紐付けたタスクがある場合はクローズしてください。
+
+`mcp__claude_ai_Notion__notion-search` で Tasks データベース内を今回の作業に関連するキーワードで検索し、`AskUserQuestion` でユーザーに確認してください（「なし」を選択肢に含める）。
+
+タスクが選択された場合、以下の更新内容をユーザーに提示し、**承認を得てから** `notion-update-page` を実行してください。
+
+- `Status`: `✅ Done`
+- `Horizon`: `Completed`
+- `Completed At`: 本日の日付（`date:Completed At:start` に ISO-8601 形式で設定）
