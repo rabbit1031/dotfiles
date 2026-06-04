@@ -59,6 +59,8 @@ Plan Mode を活用してゴール達成までの計画を立て、`TodoWrite` �
 
 構造化プロンプト・補完で得た情報・タスク分解を本文にまとめ、Notion の Notes データベースに起票してください。
 
+本文を作成する前に `Skill(notion-style)` を呼び出し、文体ガイドラインを確認すること。
+
 - ツール: `mcp__claude_ai_Notion__notion-create-pages`
 - 親（parent）: `notion-search` で「Notes」を検索し、メモ管理用のデータベースを特定してそのデータソース URL を使うこと
 - プロパティはデータベースのスキーマに従い、以下を設定すること:

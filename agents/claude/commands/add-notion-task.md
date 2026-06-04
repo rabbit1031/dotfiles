@@ -47,6 +47,8 @@ argument-hint: <タスク名>
 
 ### 7. Notion Tasks に登録
 
+本文がある場合は `Skill(notion-style)` を呼び出し、文体ガイドラインを確認すること。
+
 `mcp__claude_ai_Notion__notion-create-pages` で登録してください。
 
 - parent: 手順4で取得した data_source_id
