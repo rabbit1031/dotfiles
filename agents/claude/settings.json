@@ -3,6 +3,9 @@
   "permissions": {
     "allow": [
       "Bash(git commit*)",
+      "Bash(git -C * diff*)",
+      "Bash(git -C * status*)",
+      "Bash(git -C * log*)",
       "Bash(./gradlew tasks*)",
       "Bash(./gradlew dependencies*)",
       "Bash(./gradlew projects*)",
@@ -75,8 +78,23 @@
     "padding": 0,
     "refreshInterval": 10
   },
+  "enabledPlugins": {
+    "claude-md-management@claude-plugins-official": true,
+    "session-report@claude-plugins-official": true,
+    "myusage@myusage-skill": true,
+    "commit-commands@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "myusage-skill": {
+      "source": {
+        "source": "github",
+        "repo": "bdangit/myusage-skill"
+      }
+    }
+  },
   "language": "japanese",
   "effortLevel": "high",
+  "verbose": true,
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": true
 }
