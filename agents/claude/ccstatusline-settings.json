@@ -81,48 +81,45 @@
       {
         "id": "9afb5c6e-3377-443e-b667-cf23b2d15cc0",
         "type": "thinking-effort",
-        "color": "brightBlack",
+        "color": "",
+        "bold": false
+      }
+    ],
+    [
+      {
+        "id": "7f56789c-a869-4467-b464-cf36b9b556ff",
+        "type": "context-bar",
+        "metadata": {
+          "display": "slider"
+        },
+        "color": "brightWhite",
         "bold": true
       },
       {
-        "id": "59534a27-833e-4768-8a33-98d705c900e2",
+        "id": "99d5b046-d3ee-4404-8491-9d4ab934776c",
         "type": "separator"
       },
       {
-        "id": "6690bda5-fac8-4c32-9c5f-13dea4883375",
-        "type": "session-clock",
-        "color": "yellow",
-        "bold": false
-      },
-      {
-        "id": "e0251e3f-a2eb-4ffe-9af5-6b80e6715f37",
-        "type": "separator"
-      },
-      {
-        "id": "ea61161a-c69e-4c7f-89b2-ae5453210156",
+        "id": "7c23c8b9-05dc-4d17-ae68-6f510051d180",
         "type": "compaction-counter",
         "color": "yellow",
         "bold": true
       },
       {
-        "id": "45a95dbf-357d-47cf-9004-266f1a17b4eb",
+        "id": "4c9cbbc9-391e-4c26-b466-94e8a566a162",
         "type": "separator"
       },
       {
-        "id": "5155311c-bfe2-4928-9979-a77509008b7c",
-        "type": "context-bar",
-        "color": "brightWhite",
-        "bold": false,
-        "metadata": {
-          "display": "slider"
-        }
+        "id": "85290572-fc60-474c-ad5d-aa7eac14160d",
+        "type": "session-clock",
+        "rawValue": false
       }
     ],
     [
       {
         "id": "efaf4d22-bd6c-4b89-8142-b35cb7b9ba6a",
         "type": "session-usage",
-        "color": "",
+        "color": "white",
         "metadata": {
           "display": "slider"
         }
@@ -134,24 +131,38 @@
       {
         "id": "90f0e55c-82b1-4f9a-af8c-ae5a53aa4988",
         "type": "reset-timer",
-        "color": ""
-      },
+        "color": "white",
+        "metadata": {
+          "compact": "true",
+          "absolute": "false"
+        }
+      }
+    ],
+    [
       {
-        "id": "115f3538-7c66-4e34-9ac5-439de104ed83",
-        "type": "separator"
-      },
-      {
-        "id": "a37addc9-7a84-4939-8f26-9db21f430f24",
+        "id": "7668c99f-fdb3-44d1-a288-c6fcef78b7ab",
         "type": "weekly-usage",
+        "metadata": {
+          "display": "slider",
+          "cursor": "false",
+          "invert": "false"
+        },
         "color": "brightBlack"
       },
       {
-        "id": "164e379b-8616-4f5c-8896-7727cbf9a4e6",
+        "id": "f5f24c42-103f-4c72-8fae-140c065485ca",
         "type": "separator"
       },
       {
-        "id": "3a1cead8-aafc-432e-abf7-bef6daf0cb36",
+        "id": "5e7cf8bf-9c0b-4b43-b291-52d1b056adf1",
         "type": "weekly-reset-timer",
+        "metadata": {
+          "timezone": "local",
+          "display": "time",
+          "hours": "false",
+          "compact": "false",
+          "absolute": "true"
+        },
         "color": "brightBlack"
       }
     ]
