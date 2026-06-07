@@ -46,7 +46,14 @@
       "Bash(gh project list*)",
       "Bash(gh project view*)",
       "Bash(gh project item-list*)",
-      "Bash(gh project field-list*)"
+      "Bash(gh project field-list*)",
+      "mcp__Homebrew__list",
+      "mcp__Homebrew__info",
+      "mcp__Homebrew__search",
+      "mcp__Homebrew__config",
+      "mcp__Homebrew__doctor",
+      "mcp__Homebrew__commands",
+      "mcp__Homebrew__help"
     ],
     "deny": [
       "Bash(git push --force*)",
