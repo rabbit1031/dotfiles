@@ -6,4 +6,7 @@
   excludesfile = ~/.gitignore_global
 
 [alias]
-  graph = log --graph --pretty=oneline --abbrev-commit
+  graph = log -graph --pretty=oneline --abbrev-commit
+
+[ghq]
+  root = ~/workspace
