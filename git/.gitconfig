@@ -9,4 +9,4 @@
   graph = log -graph --pretty=oneline --abbrev-commit
 
 [ghq]
-	root = ~/workspace
+  root = ~/workspace
