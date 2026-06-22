@@ -20,7 +20,7 @@ argument-hint: "[対象ページ URL（省略可）]"
 
 ## 3. 更新
 
-本文を追記する前に `Skill(notion-style)` を呼び出し、文体ガイドラインを確認すること。
+本文を追記する前に `Skill(style)` を呼び出し、文体ガイドラインを確認すること。
 
 - ツール: `mcp__claude_ai_Notion__notion-update-page`
 - 本文に `## 決定事項` / `## 成果` / `## 残課題` を追記する
