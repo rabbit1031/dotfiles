@@ -89,13 +89,20 @@
     "claude-md-management@claude-plugins-official": true,
     "session-report@claude-plugins-official": true,
     "myusage@myusage-skill": true,
-    "commit-commands@claude-plugins-official": true
+    "commit-commands@claude-plugins-official": true,
+    "modern-web-guidance@googlechrome": true
   },
   "extraKnownMarketplaces": {
     "myusage-skill": {
       "source": {
         "source": "github",
         "repo": "bdangit/myusage-skill"
+      }
+    },
+    "googlechrome": {
+      "source": {
+        "source": "github",
+        "repo": "GoogleChrome/modern-web-guidance"
       }
     }
   },

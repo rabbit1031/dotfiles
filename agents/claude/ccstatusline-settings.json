@@ -89,11 +89,11 @@
       {
         "id": "7f56789c-a869-4467-b464-cf36b9b556ff",
         "type": "context-bar",
+        "color": "brightWhite",
+        "bold": true,
         "metadata": {
           "display": "slider"
-        },
-        "color": "brightWhite",
-        "bold": true
+        }
       },
       {
         "id": "99d5b046-d3ee-4404-8491-9d4ab934776c",
@@ -133,8 +133,9 @@
         "type": "reset-timer",
         "color": "white",
         "metadata": {
-          "compact": "true",
-          "absolute": "false"
+          "compact": "false",
+          "absolute": "true",
+          "timezone": "local"
         }
       }
     ],
@@ -142,12 +143,12 @@
       {
         "id": "7668c99f-fdb3-44d1-a288-c6fcef78b7ab",
         "type": "weekly-usage",
+        "color": "brightBlack",
         "metadata": {
           "display": "slider",
           "cursor": "false",
           "invert": "false"
-        },
-        "color": "brightBlack"
+        }
       },
       {
         "id": "f5f24c42-103f-4c72-8fae-140c065485ca",
@@ -156,14 +157,14 @@
       {
         "id": "5e7cf8bf-9c0b-4b43-b291-52d1b056adf1",
         "type": "weekly-reset-timer",
+        "color": "brightBlack",
         "metadata": {
           "timezone": "local",
           "display": "time",
           "hours": "false",
           "compact": "false",
           "absolute": "true"
-        },
-        "color": "brightBlack"
+        }
       }
     ]
   ],
