@@ -1,8 +1,11 @@
 {
   "name": "rabbit1031-plugins",
-  "owner": "rabbit1031",
+  "owner": {
+    "name": "rabbit1031"
+  },
   "plugins": [
     {
+      "name": "notion-workflow",
       "source": "./agents/claude/plugins/notion-workflow"
     }
   ]
