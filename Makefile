@@ -1,5 +1,7 @@
 DOTFILES_DIR := $(shell pwd)
 PLATFORM     := $(shell uname -s)
+FORCE        ?=
+LN_FLAGS     := -sv$(if $(FORCE),f)
 
 .PHONY: all bash zsh nvim starship git gemini claude npm ghostty
 
@@ -20,13 +22,13 @@ fi
 endef
 
 bash:
-	ln -sfv $(DOTFILES_DIR)/bash/.bash_profile $(HOME)/.bash_profile
-	ln -sfv $(DOTFILES_DIR)/bash/.bashrc $(HOME)/.bashrc
+	ln $(LN_FLAGS) $(DOTFILES_DIR)/bash/.bash_profile $(HOME)/.bash_profile
+	ln $(LN_FLAGS) $(DOTFILES_DIR)/bash/.bashrc $(HOME)/.bashrc
 
 zsh:
-	ln -sfv $(DOTFILES_DIR)/zsh/.zshrc $(HOME)/.zshrc
+	ln $(LN_FLAGS) $(DOTFILES_DIR)/zsh/.zshrc $(HOME)/.zshrc
 	@if [ -r "$(DOTFILES_DIR)/zsh/.zshrc.$(PLATFORM)" ]; then \
-		ln -sfv "$(DOTFILES_DIR)/zsh/.zshrc.$(PLATFORM)" "$(HOME)/.zshrc.$(PLATFORM)"; \
+		ln $(LN_FLAGS) "$(DOTFILES_DIR)/zsh/.zshrc.$(PLATFORM)" "$(HOME)/.zshrc.$(PLATFORM)"; \
 	fi
 
 nvim:
@@ -35,30 +37,30 @@ nvim:
 
 starship:
 	@mkdir -pv $(HOME)/.config
-	ln -sfv $(DOTFILES_DIR)/starship.toml $(HOME)/.config/starship.toml
+	ln $(LN_FLAGS) $(DOTFILES_DIR)/starship.toml $(HOME)/.config/starship.toml
 
 git:
-	ln -sfv $(DOTFILES_DIR)/git/.gitconfig $(HOME)/.gitconfig
-	ln -sfv $(DOTFILES_DIR)/git/.gitignore_global $(HOME)/.gitignore_global
+	ln $(LN_FLAGS) $(DOTFILES_DIR)/git/.gitconfig $(HOME)/.gitconfig
+	ln $(LN_FLAGS) $(DOTFILES_DIR)/git/.gitignore_global $(HOME)/.gitignore_global
 
 gemini:
 	@mkdir -pv $(HOME)/.gemini
-	ln -sfv $(DOTFILES_DIR)/agents/gemini/settings.json $(HOME)/.gemini/settings.json
-	ln -sfv $(DOTFILES_DIR)/agents/AGENTS.md $(HOME)/.gemini/GEMINI.md
+	ln $(LN_FLAGS) $(DOTFILES_DIR)/agents/gemini/settings.json $(HOME)/.gemini/settings.json
+	ln $(LN_FLAGS) $(DOTFILES_DIR)/agents/AGENTS.md $(HOME)/.gemini/GEMINI.md
 	$(call SAFE_LINK_DIR,$(DOTFILES_DIR)/agents/gemini/policies,$(HOME)/.gemini/policies)
 
 claude:
 	@mkdir -pv $(HOME)/.claude
-	ln -sfv $(DOTFILES_DIR)/agents/AGENTS.md $(HOME)/.claude/CLAUDE.md
-	ln -sfv $(DOTFILES_DIR)/agents/claude/settings.json $(HOME)/.claude/settings.json
+	ln $(LN_FLAGS) $(DOTFILES_DIR)/agents/AGENTS.md $(HOME)/.claude/CLAUDE.md
+	ln $(LN_FLAGS) $(DOTFILES_DIR)/agents/claude/settings.json $(HOME)/.claude/settings.json
 	@mkdir -pv $(HOME)/.config/ccstatusline
-	ln -sfv $(DOTFILES_DIR)/agents/claude/ccstatusline-settings.json $(HOME)/.config/ccstatusline/settings.json
+	ln $(LN_FLAGS) $(DOTFILES_DIR)/agents/claude/ccstatusline-settings.json $(HOME)/.config/ccstatusline/settings.json
 	$(call SAFE_LINK_DIR,$(DOTFILES_DIR)/agents/claude/commands,$(HOME)/.claude/commands)
 	$(call SAFE_LINK_DIR,$(DOTFILES_DIR)/agents/claude/plugins/notion-workflow/skills,$(HOME)/.claude/skills)
 
 npm:
-	ln -sfv $(DOTFILES_DIR)/.npmrc $(HOME)/.npmrc
+	ln $(LN_FLAGS) $(DOTFILES_DIR)/.npmrc $(HOME)/.npmrc
 
 ghostty:
 	@mkdir -pv $(HOME)/.config/ghostty
-	ln -sfv $(DOTFILES_DIR)/config.ghostty $(HOME)/.config/ghostty/config.ghostty
+	ln $(LN_FLAGS) $(DOTFILES_DIR)/config.ghostty $(HOME)/.config/ghostty/config.ghostty
