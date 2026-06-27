@@ -140,10 +140,6 @@ fi
 # mise
 (( $+commands[mise] )) && eval "$(mise activate zsh)"
 
-# SDKMAN
-export SDKMAN_DIR="${HOMEBREW_PREFIX}/opt/sdkman-cli/libexec"
-[[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
-
 # zsh plugins (MUST be loaded last)
 [[ -s "${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && source "${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 [[ -s "${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] && source "${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
