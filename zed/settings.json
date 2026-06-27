@@ -1,0 +1,92 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "outline_panel": {
+    "dock": "left",
+  },
+  "tab_size": 2,
+  "preferred_line_length": 100,
+  "use_system_window_tabs": false,
+  "tabs": {
+    "show_close_button": "hover",
+    "close_position": "left",
+    "file_icons": true,
+    "git_status": true,
+  },
+  "title_bar": {
+    "show_menus": false,
+    "show_branch_status_icon": true,
+  },
+  "status_bar": {
+    "show_active_file": true,
+    "line_endings_button": true,
+    "active_encoding_button": "enabled",
+  },
+  "terminal": {
+    "toolbar": {
+      "breadcrumbs": false,
+    },
+    "shell": "system",
+    "option_as_meta": false,
+    "cursor_shape": "block",
+    "dock": "right",
+    "show_count_badge": false,
+    "default_width": 640.0,
+    "font_weight": 300.0,
+  },
+  "git_panel": {
+    "dock": "left",
+  },
+  "project_panel": {
+    "hide_root": false,
+    "git_status_indicator": true,
+    "diagnostic_badges": false,
+    "bold_folder_labels": true,
+    "indent_size": 20.0,
+    "entry_spacing": "standard",
+    "hide_gitignore": false,
+    "default_width": 300.0,
+    "dock": "left",
+  },
+  "proxy": "",
+  "agent": {
+    "dock": "right",
+    "button": true,
+    "sidebar_side": "right",
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "ui_font_family": ".SystemUIFont",
+  "buffer_line_height": "standard",
+  "buffer_font_family": "FiraCode Nerd Font Mono",
+  // Disable ligatures (e.g. !==, =>)
+  "buffer_font_features": {
+    "calt": false,
+  },
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry",
+    },
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+    "anthropic_retention": false,
+  },
+  "vim_mode": true,
+  "icon_theme": {
+    "mode": "system",
+    "light": "JetBrains New UI Icons (Light)",
+    "dark": "JetBrains New UI Icons (Dark)",
+  },
+  "base_keymap": "JetBrains",
+  "ui_font_size": 14.0,
+  "buffer_font_size": 12.0,
+  "theme": "New Darcula",
+}
