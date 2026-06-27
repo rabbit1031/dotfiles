@@ -3,9 +3,9 @@ PLATFORM     := $(shell uname -s)
 FORCE        ?=
 LN_FLAGS     := -sv$(if $(FORCE),f)
 
-.PHONY: all link link-force link-bash link-zsh link-nvim link-starship link-git link-gemini link-claude link-npm link-ghostty link-zed help
+.PHONY: all link link-force link-bash link-zsh link-nvim link-starship link-git link-gemini link-claude link-npm link-ghostty link-zed link-mise help
 
-all: link-bash link-zsh link-nvim link-starship link-git link-gemini link-claude link-npm link-ghostty link-zed
+all: link-bash link-zsh link-nvim link-starship link-git link-gemini link-claude link-npm link-ghostty link-zed link-mise
 
 link: all
 
@@ -73,6 +73,10 @@ link-zed:
 	@mkdir -pv $(HOME)/.config/zed
 	ln $(LN_FLAGS) $(DOTFILES_DIR)/zed/settings.json $(HOME)/.config/zed/settings.json
 
+link-mise:
+	@mkdir -pv $(HOME)/.config/mise
+	ln $(LN_FLAGS) $(DOTFILES_DIR)/mise/config.toml $(HOME)/.config/mise/config.toml
+
 help:
 	@echo "Usage: make [target]"
 	@echo ""
@@ -89,3 +93,4 @@ help:
 	@echo "  link-npm      Link npm config"
 	@echo "  link-ghostty  Link Ghostty config"
 	@echo "  link-zed      Link Zed config"
+	@echo "  link-mise     Link mise config"
