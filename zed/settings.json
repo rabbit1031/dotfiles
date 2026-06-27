@@ -89,4 +89,15 @@
   "ui_font_size": 14.0,
   "buffer_font_size": 12.0,
   "theme": "New Darcula",
+  "auto_install_extensions": {
+    "colored-zed-icons-theme": true,
+    "html": true,
+    "java": true,
+    "jetbrains-new-ui-icons": true,
+    "jetbrains-themes": true,
+    "kotlin": true,
+    "make": true,
+    "new-darcula": true,
+    "sql": true,
+  },
 }
