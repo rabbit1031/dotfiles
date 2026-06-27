@@ -1,6 +1,6 @@
 ---
-description: セッションの決定・成果を整理し、対応する Notion Notes ページを更新する
-argument-hint: "[対象ページ URL（省略可）]"
+name: wrapup
+description: セッションの決定・成果を整理し、対応する Notion Notes ページを更新する。ユーザーが「wrapup して」「作業を締めたい」「Notion を更新して」と言ったとき、または作業の終わりに使う。
 ---
 
 あなたはタスクの締め（wrapup）を担当します。今回のセッションの成果を Notion の該当ページに記録してください。
@@ -15,15 +15,14 @@ argument-hint: "[対象ページ URL（省略可）]"
 
 ## 2. 対象ページの特定
 
-- `$ARGUMENTS` に Notion ページ URL があれば、それを対象にします。
-- 無ければ `mcp__claude_ai_Notion__notion-search` で「`🤖 w/ Claude Code`」タグを持つ最近のページを検索し、どれが対象かユーザーに確認してください。
+- ユーザーが Notion ページ URL を渡していればそれを対象にします。
+- 無ければ「`🤖 w/ Claude Code`」タグを持つ最近のページを Notion で検索し、（`AskUserQuestion` が利用可能な場合はそれを使って）どれが対象かユーザーに確認してください。
 
 ## 3. 更新
 
 本文を追記する前に `Skill(style)` を呼び出し、文体ガイドラインを確認すること。
 
-- ツール: `mcp__claude_ai_Notion__notion-update-page`
-- 本文に `## 決定事項` / `## 成果` / `## 残課題` を追記する
+- Notion のページに `## 決定事項` / `## 成果` / `## 残課題` を追記する
 
 **重要**: 書き込みは外向きアクションです。追記内容を先にユーザーに提示し、**承認を得てから** 更新を実行してください。
 
@@ -35,10 +34,10 @@ argument-hint: "[対象ページ URL（省略可）]"
 
 kickoff で紐付けたタスクがある場合はクローズしてください。
 
-`mcp__claude_ai_Notion__notion-search` で Tasks データベース内を今回の作業に関連するキーワードで検索し、`AskUserQuestion` でユーザーに確認してください（「なし」を選択肢に含める）。
+Notion の Tasks データベース内を今回の作業に関連するキーワードで検索し、（`AskUserQuestion` が利用可能な場合はそれを使って）ユーザーに確認してください（「なし」を選択肢に含める）。
 
-タスクが選択された場合、以下の更新内容をユーザーに提示し、**承認を得てから** `notion-update-page` を実行してください。
+タスクが選択された場合、以下の更新内容をユーザーに提示し、**承認を得てから** 更新を実行してください。
 
 - `Status`: `✅ Done`
 - `Horizon`: `Completed`
-- `Completed At`: 本日の日付（`date:Completed At:start` に ISO-8601 形式で設定）
+- `Completed At`: 本日の日付（ISO-8601 形式で設定）

@@ -2,12 +2,18 @@
 
 ## Claude
 
-### Commands
+### Plugins
 
-`agents/claude/commands/` 配下のカスタムスラッシュコマンド。`makelink.sh` で `~/.claude/commands` にシンボリックリンクされる。
+`agents/claude/plugins/` 配下のプラグイン。`.claude-plugin/marketplace.json` でマーケットプレイスとして公開し、CC・Web UI の両環境から参照する。
 
-- `/kickoff <依頼>` — 依頼を「目的/背景・制約/成果物/完了条件」に構造化し、不足を確認、計画・タスク分解した上で Notion の Notes DB に `🤖 Claude Code` タグで起票する。
-- `/wrapup [ページURL]` — セッションの決定・成果・残課題を整理し、対応する Notion Notes ページに追記する。
+#### notion-workflow
+
+Notion タスク・ノート管理ワークフロースキル集。
+
+- `Skill(kickoff)` — 依頼を「目的/背景・制約/成果物/完了条件」に構造化し、不足を確認、計画・タスク分解した上で Notion の Notes DB に `🤖 w/ Claude Code` タグで起票する。
+- `Skill(wrapup)` — セッションの決定・成果・残課題を整理し、対応する Notion Notes ページに追記する。
+- `Skill(add-task)` — Notion Tasks の Inbox に新しいタスクを追加する。
+- `Skill(style)` — Notion 作業メモの文体ガイドラインを提供する（他スキルから参照）。
 
 いずれも Notion への書き込み前に内容を提示し、承認を得てから実行する。
 
