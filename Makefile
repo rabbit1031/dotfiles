@@ -60,7 +60,6 @@ link-claude:
 	ln $(LN_FLAGS) $(DOTFILES_DIR)/agents/claude/settings.json $(HOME)/.claude/settings.json
 	@mkdir -pv $(HOME)/.config/ccstatusline
 	ln $(LN_FLAGS) $(DOTFILES_DIR)/agents/claude/ccstatusline-settings.json $(HOME)/.config/ccstatusline/settings.json
-	$(call SAFE_LINK_DIR,$(DOTFILES_DIR)/agents/claude/commands,$(HOME)/.claude/commands)
 	$(call SAFE_LINK_DIR,$(DOTFILES_DIR)/agents/claude/plugins/notion-workflow/skills,$(HOME)/.claude/skills)
 
 link-npm:
