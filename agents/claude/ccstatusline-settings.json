@@ -122,7 +122,7 @@
         "color": "white",
         "metadata": {
           "display": "slider",
-          "invert": "true",
+          "invert": "false",
           "cursor": "true"
         }
       },
@@ -146,12 +146,12 @@
         "id": "7668c99f-fdb3-44d1-a288-c6fcef78b7ab",
         "type": "weekly-usage",
         "color": "brightBlack",
+        "bold": false,
         "metadata": {
           "display": "slider",
-          "invert": "true",
+          "invert": "false",
           "cursor": "true"
-        },
-        "bold": false
+        }
       },
       {
         "id": "f5f24c42-103f-4c72-8fae-140c065485ca",
@@ -181,8 +181,12 @@
   "minimalistMode": false,
   "powerline": {
     "enabled": false,
-    "separators": [""],
-    "separatorInvertBackground": [false],
+    "separators": [
+      ""
+    ],
+    "separatorInvertBackground": [
+      false
+    ],
     "startCaps": [],
     "endCaps": [],
     "autoAlign": false,
