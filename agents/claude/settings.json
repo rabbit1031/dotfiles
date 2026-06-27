@@ -110,5 +110,6 @@
   "effortLevel": "high",
   "verbose": true,
   "remoteControlAtStartup": true,
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": true,
+  "tui": "fullscreen"
 }
