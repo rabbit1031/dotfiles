@@ -3,6 +3,10 @@ font-family = "Hiragino Sans W3"
 font-size = 12
 adjust-cell-width = -1
 
+# disable ligatures
+# https://ghostty.org/docs/config/reference#font-feature
+font-feature=-calt, -liga, -dlig
+
 theme = "JetBrains Darcula"
 background-opacity = 0.9
 background-blur = 20
