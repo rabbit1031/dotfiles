@@ -108,8 +108,9 @@
   },
   "language": "japanese",
   "effortLevel": "high",
+  "tui": "fullscreen",
   "verbose": true,
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": true,
-  "tui": "fullscreen"
+  "model": "opusplan"
 }
