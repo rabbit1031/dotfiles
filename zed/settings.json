@@ -84,11 +84,22 @@
     }
   },
   "agent": {
+    "terminal_init_command": "claude",
+    "default_model": {
+      "provider": "google",
+      "model": "gemini-3.6-flash",
+      "enable_thinking": true,
+    },
     "dock": "right",
     "button": true,
     "sidebar_side": "right",
     "favorite_models": [],
     "model_parameters": [],
+    "commit_message_model": {
+      "effort": "minimal",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+    },
   },
   "ui_font_family": ".SystemUIFont",
   "buffer_line_height": "standard",
