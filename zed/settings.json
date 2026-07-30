@@ -61,6 +61,28 @@
     "dock": "left",
   },
   "proxy": "",
+  "language_models": {
+    "google": {
+      "available_models": [
+        {
+          "name": "gemini-3.6-flash",
+          "display_name": "Gemini 3.6 Flash",
+          "max_tokens": 1048576,
+          "mode": {
+            "type": "thinking"
+          }
+        },
+        {
+          "name": "gemini-3.5-flash-lite",
+          "display_name": "Gemini 3.5 Flash Lite",
+          "max_tokens": 1048576,
+          "mode": {
+            "type": "thinking"
+          }
+        }
+      ]
+    }
+  },
   "agent": {
     "dock": "right",
     "button": true,
