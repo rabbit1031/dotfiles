@@ -7,6 +7,10 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "disable_ai": false,
+  "edit_predictions": {
+    "provider": "none",
+  },
   "current_line_highlight": "all",
   "outline_panel": {
     "dock": "left",
