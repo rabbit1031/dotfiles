@@ -139,6 +139,15 @@
     "calt": false,
   },
   "agent_servers": {
+    "codex-acp": {
+      "type": "registry"
+    },
+    "antigravity-acp": {
+      "type": "registry"
+    },
+    "github-copilot-cli": {
+      "type": "registry"
+    },
     "claude-acp": {
       "default_config_options": {
         "model": "opusplan"
