@@ -7,6 +7,35 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "context_servers": {
+    "OpenAI Docs": {
+      "enabled": true,
+      "url": "https://developers.openai.com/mcp"
+    },
+    "Gemini Docs": {
+      "enabled": true,
+      "url": "https://gemini-api-docs-mcp.dev"
+    },
+    "MDN": {
+      "enabled": true,
+      "url": "https://mcp.mdn.mozilla.net/",
+      "headers": {
+        "X-Moz-1st-Party-Data-Opt-Out": "1"
+      }
+    },
+    "Notion": {
+      "enabled": true,
+      "url": "https://mcp.notion.com/mcp"
+    },
+    "Homebrew": {
+      "enabled": true,
+      "remote": false,
+      "command": "brew",
+      "args": [
+        "mcp-server"
+      ]
+    }
+  },
   "disable_ai": false,
   "edit_predictions": {
     "provider": "none",
