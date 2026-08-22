@@ -94,8 +94,8 @@
     "google": {
       "available_models": [
         {
-          "name": "gemini-3.6-flash",
-          "display_name": "Gemini 3.6 Flash",
+          "name": "gemini-3.7-flash",
+          "display_name": "Gemini 3.7 Flash",
           "max_tokens": 1048576,
           "mode": {
             "type": "thinking"
@@ -116,7 +116,7 @@
     "terminal_init_command": "claude",
     "default_model": {
       "provider": "google",
-      "model": "gemini-3.6-flash",
+      "model": "gemini-3.7-flash",
       "enable_thinking": true,
     },
     "dock": "right",
