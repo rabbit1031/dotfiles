@@ -38,7 +38,8 @@
   },
   "disable_ai": false,
   "edit_predictions": {
-    "provider": "none",
+    "allow_data_collection": "no",
+    "provider": "copilot",
   },
   "current_line_highlight": "all",
   "outline_panel": {
