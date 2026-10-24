@@ -104,6 +104,7 @@
   "language": "japanese",
   "effortLevel": "high",
   "tui": "fullscreen",
+  "theme": "dark",
   "verbose": true,
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": true,
