@@ -18,7 +18,7 @@
   "model": "google/gemini-3.8-flash[1m]",
   "statusLine": {
     "type": "command",
-    "command": "npx -y ccstatusline@latest --config \"$HOME/.claude-openrouter/ccstatusline-settings.json\"",
+    "command": "pnpm dlx ccstatusline@latest --config \"$HOME/.claude-openrouter/ccstatusline-settings.json\"",
     "padding": 0,
     "refreshInterval": 10
   }

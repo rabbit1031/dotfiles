@@ -83,7 +83,7 @@
   "model": "sonnet",
   "statusLine": {
     "type": "command",
-    "command": "npx -y ccstatusline@latest",
+    "command": "pnpm dlx ccstatusline@latest",
     "padding": 0,
     "refreshInterval": 10
   },
