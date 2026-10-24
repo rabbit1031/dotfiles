@@ -92,32 +92,13 @@
   },
   "proxy": "",
   "language_models": {
-    "google": {
-      "available_models": [
-        {
-          "name": "gemini-3.7-flash",
-          "display_name": "Gemini 3.7 Flash",
-          "max_tokens": 1048576,
-          "mode": {
-            "type": "thinking"
-          }
-        },
-        {
-          "name": "gemini-3.5-flash-lite",
-          "display_name": "Gemini 3.5 Flash Lite",
-          "max_tokens": 1048576,
-          "mode": {
-            "type": "thinking"
-          }
-        }
-      ]
-    }
   },
   "agent": {
     "terminal_init_command": "claude",
     "default_model": {
-      "provider": "google",
-      "model": "gemini-3.7-flash",
+      "effort": "high",
+      "provider": "openrouter",
+      "model": "anthropic/claude-sonnet-5.5",
       "enable_thinking": true,
     },
     "dock": "right",
