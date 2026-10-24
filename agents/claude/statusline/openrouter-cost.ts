@@ -124,6 +124,9 @@ async function main(): Promise<void> {
   const statePath = join(tmpdir(), `claude-openrouter-cost-${sessionId}.json`);
   const state = loadState(statePath);
 
+  const showProvider = process.argv.includes('--provider');
+  const showCost = process.argv.includes('--cost') || !showProvider;
+
   const seen = new Set(state.seen_ids);
   const pending = [...new Set(transcriptFiles(transcriptPath).flatMap(generationIds))]
     .filter((id) => !seen.has(id))
@@ -144,13 +147,19 @@ async function main(): Promise<void> {
     saveState(statePath, state);
   }
 
-  if (state.seen_ids.length === 0) return;
-  const model = state.last_model.replace(/^[^/]+\//, '').replace(/-\d{8}$/, '');
-  // cache_discount goes negative when cache writes cost more than reads saved
-  const d = state.total_cache_discount;
-  const cache = d ? ` (cache ${d > 0 ? '-' : '+'}$${Math.abs(d).toFixed(4)})` : '';
-  const byok = state.total_byok_cost ? ` (BYOK $${state.total_byok_cost.toFixed(4)})` : '';
-  process.stdout.write(`${state.last_provider}: ${model} | $${state.total_cost.toFixed(4)}${byok}${cache}`);
+  if (showProvider && state.last_provider) {
+    process.stdout.write(`Provider: ${state.last_provider}`);
+    return;
+  }
+
+  if (showCost) {
+    if (state.seen_ids.length === 0) return;
+    // cache_discount goes negative when cache writes cost more than reads saved
+    const d = state.total_cache_discount;
+    const cache = d ? ` (cache ${d > 0 ? '-' : '+'}$${Math.abs(d).toFixed(4)})` : '';
+    const byok = state.total_byok_cost ? ` (BYOK $${state.total_byok_cost.toFixed(4)})` : '';
+    process.stdout.write(`Cost: $${state.total_cost.toFixed(4)}${byok}${cache}`);
+  }
 }
 
 main().catch(() => {});
