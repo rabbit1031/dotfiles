@@ -2,10 +2,11 @@ DOTFILES_DIR := $(patsubst %/,%,$(dir $(abspath $(lastword $(MAKEFILE_LIST)))))
 PLATFORM     := $(shell uname -s)
 FORCE        ?=
 LN_FLAGS     := -sv$(if $(FORCE),f)
+PNPM_CONFIG_DIR := $(if $(filter Darwin,$(PLATFORM)),$(HOME)/Library/Preferences/pnpm,$(or $(XDG_CONFIG_HOME),$(HOME)/.config)/pnpm)
 
-.PHONY: all link link-force link-bash link-zsh link-nvim link-starship link-git link-gemini link-claude link-npm link-ghostty link-zed link-mise link-colima help
+.PHONY: all link link-force link-bash link-zsh link-nvim link-starship link-git link-gemini link-claude link-npm link-pnpm link-ghostty link-zed link-mise link-colima help
 
-all: link-bash link-zsh link-nvim link-starship link-git link-gemini link-claude link-npm link-ghostty link-zed link-mise link-colima
+all: link-bash link-zsh link-nvim link-starship link-git link-gemini link-claude link-npm link-pnpm link-ghostty link-zed link-mise link-colima
 
 link: all
 
@@ -71,6 +72,10 @@ link-claude:
 link-npm:
 	ln $(LN_FLAGS) $(DOTFILES_DIR)/.npmrc $(HOME)/.npmrc
 
+link-pnpm:
+	@mkdir -pv $(PNPM_CONFIG_DIR)
+	ln $(LN_FLAGS) $(DOTFILES_DIR)/pnpm/config.yaml $(PNPM_CONFIG_DIR)/config.yaml
+
 link-ghostty:
 	@mkdir -pv $(HOME)/.config/ghostty
 	ln $(LN_FLAGS) $(DOTFILES_DIR)/config.ghostty $(HOME)/.config/ghostty/config.ghostty
@@ -101,6 +106,7 @@ help:
 	@echo "  link-gemini   Link Gemini agent config"
 	@echo "  link-claude   Link Claude agent config"
 	@echo "  link-npm      Link npm config"
+	@echo "  link-pnpm     Link pnpm config"
 	@echo "  link-ghostty  Link Ghostty config"
 	@echo "  link-zed      Link Zed config"
 	@echo "  link-mise     Link mise config"
