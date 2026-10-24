@@ -8,11 +8,11 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "context_servers": {
-    "OpenAI Docs": {
+    "openai-docs": {
       "enabled": true,
       "url": "https://developers.openai.com/mcp"
     },
-    "Gemini Docs": {
+    "gemini-api-docs": {
       "enabled": true,
       "url": "https://gemini-api-docs-mcp.dev"
     },
