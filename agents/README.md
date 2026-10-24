@@ -30,7 +30,9 @@ Claude Code を Anthropic 公式（OAuth/サブスクリプション）と OpenR
 
 - 設定: 差分設定で ccstatusline を `--config ~/.claude-openrouter/ccstatusline-settings.json` に切り替え
   - `agents/claude/ccstatusline-settings.openrouter.json` からリンク
-- 表示: 使用量の行の代わりに `agents/claude/statusline/openrouter-cost.ts` で OpenRouter のセッション費用を表示
+- 表示:
+  - モデル行（3行目）: `openrouter-cost.ts --provider` でルーティング先プロバイダ名を表示
+  - コスト行（5行目）: `openrouter-cost.ts --cost` で OpenRouter のセッション費用を表示
   - Node の型ストリッピングで直接実行
   - サブエージェント分を含む
   - BYOK 分の `upstream_inference_cost` は `(BYOK $…)` として別枠表示
