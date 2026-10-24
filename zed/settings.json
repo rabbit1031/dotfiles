@@ -139,18 +139,15 @@
     "calt": false,
   },
   "agent_servers": {
-    "codex-acp": {
-      "type": "registry"
-    },
     "antigravity-acp": {
-      "type": "registry"
-    },
-    "github-copilot-cli": {
+      "default_config_options": {
+        "model": "gemini-3.8-flash-high"
+      },
       "type": "registry"
     },
     "claude-acp": {
       "default_config_options": {
-        "model": "opusplan"
+        "model": "opus"
       },
       "type": "registry",
     },
