@@ -80,6 +80,7 @@
       "Bash(rm *)"
     ]
   },
+  "model": "sonnet",
   "statusLine": {
     "type": "command",
     "command": "npx -y ccstatusline@latest",
@@ -109,10 +110,17 @@
   },
   "language": "japanese",
   "effortLevel": "high",
+  "modelSettings": {
+    "claude-sonnet-5-5": {
+      "effortLevel": "high"
+    },
+    "claude-opus-5-5": {
+      "effortLevel": "high"
+    }
+  },
   "tui": "fullscreen",
   "theme": "dark",
   "verbose": true,
   "remoteControlAtStartup": true,
-  "agentPushNotifEnabled": true,
-  "model": "opusplan"
+  "agentPushNotifEnabled": true
 }
