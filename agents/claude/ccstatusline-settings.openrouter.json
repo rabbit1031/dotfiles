@@ -1,0 +1,152 @@
+{
+  "version": 4,
+  "lines": [
+    [
+      {
+        "id": "88781dca-01aa-421b-a749-e2e7f2e182b1",
+        "type": "current-working-dir",
+        "color": "brightCyan",
+        "bold": true
+      }
+    ],
+    [
+      {
+        "id": "ca680539-42b0-4c14-965f-40385c3260e2",
+        "type": "git-branch",
+        "color": "brightMagenta",
+        "bold": true
+      },
+      {
+        "id": "63942790-f9d0-4085-b872-a56e8bce3f6e",
+        "type": "separator"
+      },
+      {
+        "id": "98eed477-1972-421d-99ce-62ac236886cd",
+        "type": "git-changes",
+        "color": "",
+        "bold": false
+      },
+      {
+        "id": "21cf57cb-f9d6-427d-b971-01f55b903f91",
+        "type": "separator"
+      },
+      {
+        "id": "77048f14-a90e-4590-8f93-ab75227eea02",
+        "type": "git-ahead-behind",
+        "color": "",
+        "bold": false
+      },
+      {
+        "id": "c84a2191-c93c-4378-8ea1-813609812335",
+        "type": "separator"
+      },
+      {
+        "id": "c579f71c-57cf-4701-83a4-4b7f12372253",
+        "type": "git-staged-files",
+        "color": "green",
+        "bold": true
+      },
+      {
+        "id": "41a45dfd-5e04-4729-9d14-46c820e66573",
+        "type": "separator"
+      },
+      {
+        "id": "841ac20f-08ec-483c-9ab9-6682d286f384",
+        "type": "git-unstaged-files",
+        "color": "yellow",
+        "bold": true
+      },
+      {
+        "id": "a4f1edc3-c38f-4339-a107-f5cc15274385",
+        "type": "separator"
+      },
+      {
+        "id": "7453aeed-ae0d-4b43-8dfc-ccd7446624f9",
+        "type": "git-untracked-files",
+        "color": "brightRed",
+        "bold": true
+      }
+    ],
+    [
+      {
+        "id": "8946f015-d6f3-478b-a013-643ccc322b41",
+        "type": "model",
+        "color": "",
+        "bold": true
+      },
+      {
+        "id": "fab0f274-bf4a-4a98-bce7-3c66b7411177",
+        "type": "separator"
+      },
+      {
+        "id": "9afb5c6e-3377-443e-b667-cf23b2d15cc0",
+        "type": "thinking-effort",
+        "color": "",
+        "bold": false
+      }
+    ],
+    [
+      {
+        "id": "7f56789c-a869-4467-b464-cf36b9b556ff",
+        "type": "context-bar",
+        "color": "brightWhite",
+        "bold": true,
+        "metadata": {
+          "display": "slider"
+        }
+      },
+      {
+        "id": "99d5b046-d3ee-4404-8491-9d4ab934776c",
+        "type": "separator"
+      },
+      {
+        "id": "7c23c8b9-05dc-4d17-ae68-6f510051d180",
+        "type": "compaction-counter",
+        "color": "yellow",
+        "bold": true
+      },
+      {
+        "id": "4c9cbbc9-391e-4c26-b466-94e8a566a162",
+        "type": "separator"
+      },
+      {
+        "id": "85290572-fc60-474c-ad5d-aa7eac14160d",
+        "type": "session-clock",
+        "rawValue": false
+      }
+    ],
+    [
+      {
+        "id": "9b9aaf35-235b-4aec-8366-36233cea1bc2",
+        "type": "custom-command",
+        "commandPath": "node \"$HOME/.claude-openrouter/statusline/openrouter-cost.ts\"",
+        "timeout": 2000,
+        "color": "green"
+      }
+    ]
+  ],
+  "flexMode": "full-minus-40",
+  "compactThreshold": 60,
+  "colorLevel": 2,
+  "inheritSeparatorColors": false,
+  "globalBold": false,
+  "gitCacheTtlSeconds": 5,
+  "minimalistMode": false,
+  "powerline": {
+    "enabled": false,
+    "separators": [
+      ""
+    ],
+    "separatorInvertBackground": [
+      false
+    ],
+    "startCaps": [],
+    "endCaps": [],
+    "autoAlign": false,
+    "continueThemeAcrossLines": false
+  },
+  "installation": {
+    "method": "auto-update",
+    "packageManager": "npm"
+  }
+}

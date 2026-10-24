@@ -148,3 +148,17 @@ fi
 
 # Enforce emacs keymap (viins is unexpectedly active in Zed terminal)
 bindkey -e
+
+# ##############################
+# AI Agents
+# ##############################
+# Claude Code via OpenRouter
+function ccor() {
+  local dir="${HOME}/.claude-openrouter"
+  # Copy shared settings so in-session writes (e.g. /model) don't reach the original
+  command cp "${HOME}/.claude/settings.json" "${dir}/settings.json" || return
+  CLAUDE_CONFIG_DIR="${dir}" \
+    command claude --settings "${dir}/settings.openrouter.json" "$@"
+}
+
+
