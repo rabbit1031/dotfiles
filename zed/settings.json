@@ -94,7 +94,17 @@
   "language_models": {
   },
   "agent": {
-    "terminal_init_command": "claude",
+    "threads_sidebar": {
+      "position": "right"
+    },
+    "message_editor_min_lines": 4,
+    "use_modifier_to_send": false,
+    "thinking_display": "always_expanded",
+    "default_profile": "ask",
+    "auto_compact": {
+      "threshold": "90%"
+    },
+    "terminal_init_command": "",
     "default_model": {
       "effort": "high",
       "provider": "openrouter",
@@ -103,7 +113,6 @@
     },
     "dock": "right",
     "button": true,
-    "sidebar_side": "right",
     "favorite_models": [
       {
         "provider": "openrouter",
