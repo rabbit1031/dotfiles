@@ -7,6 +7,15 @@ import { execFileSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
+import { parseArgs } from 'node:util';
+
+const USAGE = `Usage: openrouter-cost.ts (--provider | --cost)
+
+Reads the Claude Code statusline JSON from stdin.
+
+  --provider   print the provider that served the latest generation
+  --cost       print the accumulated session cost
+  -h, --help   show this help`;
 
 // Keep each refresh well inside ccstatusline's 2000ms timeout; the rest is picked up next refresh
 const MAX_FETCH_PER_RUN = 20;
@@ -22,7 +31,6 @@ interface GenerationData {
   is_byok: boolean;
   upstream_inference_cost: number | null;
   provider_name: string;
-  model: string;
 }
 
 interface State {
@@ -31,7 +39,33 @@ interface State {
   total_byok_cost: number;
   total_cache_discount: number;
   last_provider: string;
-  last_model: string;
+}
+
+// Exactly one mode is required; anything else is a usage error rather than a silent default
+function parseMode(): 'provider' | 'cost' {
+  const fail = (message: string): never => {
+    process.stderr.write(`openrouter-cost.ts: ${message}\n${USAGE}\n`);
+    process.exit(2);
+  };
+  try {
+    const { values } = parseArgs({
+      options: {
+        provider: { type: 'boolean' },
+        cost: { type: 'boolean' },
+        help: { type: 'boolean', short: 'h' },
+      },
+    });
+    if (values.help) {
+      process.stdout.write(`${USAGE}\n`);
+      process.exit(0);
+    }
+    if (values.provider && values.cost) return fail('--provider and --cost are mutually exclusive');
+    if (values.provider) return 'provider';
+    if (values.cost) return 'cost';
+    return fail('missing required option: --provider or --cost');
+  } catch (e) {
+    return fail(e instanceof Error ? e.message : String(e));
+  }
 }
 
 function readKey(): string {
@@ -82,7 +116,6 @@ const emptyState = (): State => ({
   total_byok_cost: 0,
   total_cache_discount: 0,
   last_provider: '',
-  last_model: '',
 });
 
 function loadState(statePath: string): State {
@@ -116,6 +149,7 @@ async function fetchGeneration(id: string, key: string): Promise<GenerationData 
 }
 
 async function main(): Promise<void> {
+  const mode = parseMode(); // before reading stdin so a bad invocation fails fast instead of hanging
   let raw = '';
   for await (const chunk of process.stdin) raw += chunk;
   const { session_id: sessionId, transcript_path: transcriptPath }: StatuslineInput = JSON.parse(raw);
@@ -123,9 +157,6 @@ async function main(): Promise<void> {
 
   const statePath = join(tmpdir(), `claude-openrouter-cost-${sessionId}.json`);
   const state = loadState(statePath);
-
-  const showProvider = process.argv.includes('--provider');
-  const showCost = process.argv.includes('--cost') || !showProvider;
 
   const seen = new Set(state.seen_ids);
   const pending = [...new Set(transcriptFiles(transcriptPath).flatMap(generationIds))]
@@ -141,25 +172,22 @@ async function main(): Promise<void> {
       if (gen.is_byok) state.total_byok_cost += gen.upstream_inference_cost ?? 0;
       state.total_cache_discount += gen.cache_discount ?? 0;
       state.last_provider = gen.provider_name || state.last_provider;
-      state.last_model = gen.model || state.last_model;
       state.seen_ids.push(pending[i]);
     });
     saveState(statePath, state);
   }
 
-  if (showProvider && state.last_provider) {
-    process.stdout.write(`Provider: ${state.last_provider}`);
+  if (mode === 'provider') {
+    if (state.last_provider) process.stdout.write(`Provider: ${state.last_provider}`);
     return;
   }
 
-  if (showCost) {
-    if (state.seen_ids.length === 0) return;
-    // cache_discount goes negative when cache writes cost more than reads saved
-    const d = state.total_cache_discount;
-    const cache = d ? ` (cache ${d > 0 ? '-' : '+'}$${Math.abs(d).toFixed(4)})` : '';
-    const byok = state.total_byok_cost ? ` (BYOK $${state.total_byok_cost.toFixed(4)})` : '';
-    process.stdout.write(`Cost: $${state.total_cost.toFixed(4)}${byok}${cache}`);
-  }
+  if (state.seen_ids.length === 0) return;
+  // cache_discount goes negative when cache writes cost more than reads saved
+  const d = state.total_cache_discount;
+  const cache = d ? ` (cache ${d > 0 ? '-' : '+'}$${Math.abs(d).toFixed(4)})` : '';
+  const byok = state.total_byok_cost ? ` (BYOK $${state.total_byok_cost.toFixed(4)})` : '';
+  process.stdout.write(`Cost: $${state.total_cost.toFixed(4)}${byok}${cache}`);
 }
 
 main().catch(() => {});
