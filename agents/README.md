@@ -6,22 +6,40 @@
 
 Claude Code を Anthropic 公式（OAuth/サブスクリプション）と OpenRouter 経由で併用・分離する構成。
 
-- **Anthropic 公式向け（デフォルト）**:
-  - 設定ディレクトリ: `~/.claude/`
-  - 起動コマンド: `claude`
-  - ベース設定: `agents/claude/settings.json`（`~/.claude/settings.json` にリンク）
-  - デフォルトモデル: `opusplan`
-  - 認証: 公式 OAuth / サブスクリプション
-- **OpenRouter 向け**:
-  - 設定ディレクトリ: `~/.claude-openrouter/`（`CLAUDE_CONFIG_DIR` で完全分離）
-  - 起動コマンド: `ccor`（zsh 関数）
-  - ベース設定: `~/.claude-openrouter/settings.json`（`ccor` 起動ごとに `agents/claude/settings.json` からコピー。セッション中の書き込みは原本に反映されない）
-  - 差分設定: `~/.claude-openrouter/settings.openrouter.json`（`agents/claude/settings.openrouter.json` からリンク）
-  - デフォルトモデル: `google/gemini-3.8-flash[1m]`
-  - 認証: `apiKeyHelper` 経由で 1Password CLI (`op read 'op://Private/OpenRouter/claude-code-api-key'`) からオンデマンド取得。環境変数や設定ファイルに生トークンを露出させない。
-  - ステータスライン: 差分設定で ccstatusline を `--config ~/.claude-openrouter/ccstatusline-settings.json`（`agents/claude/ccstatusline-settings.openrouter.json` からリンク）に切り替え。使用量の行の代わりに `agents/claude/statusline/openrouter-cost.ts`（Node の型ストリッピングで直接実行）で OpenRouter のセッション費用（サブエージェント分を含む）を表示（BYOK 分の `upstream_inference_cost` は `(BYOK $…)` として別枠表示）。照会には利用上限 $0 の専用キーを使い、macOS キーチェーンに保存する（`security add-generic-password -U -a "$USER" -s ccor-statusline -w` を実行し、プロンプトに貼り付け）。
-- **Zed (ACP) 連携**:
-  - `claude-acp`: Anthropic 公式向けのみ。OpenRouter 向けは CLI (`ccor`) で利用する
+#### Anthropic 公式向け（デフォルト）
+
+- 設定ディレクトリ: `~/.claude/`
+- 起動コマンド: `claude`
+- ベース設定: `agents/claude/settings.json`
+  - `~/.claude/settings.json` へリンク
+- 認証: 公式 OAuth / サブスクリプション
+
+#### OpenRouter 向け
+
+- 設定ディレクトリ: `~/.claude-openrouter/`
+  - `CLAUDE_CONFIG_DIR` で完全分離
+- 起動コマンド: `ccor` （zsh 関数）
+- ベース設定: `~/.claude-openrouter/settings.json`
+  - 起動ごとに `agents/claude/settings.json` からコピー
+- 差分設定: `agents/claude/settings.openrouter.json`
+  - `~/.claude-openrouter/settings.openrouter.json` へリンク
+- モデル: Claude は公式側で使うため、主に非 Claude モデルを割り当て
+- 認証: `apiKeyHelper` 経由で 1Password CLI からオンデマンド取得
+
+##### ステータスライン（OpenRouter 向け）
+
+- 設定: 差分設定で ccstatusline を `--config ~/.claude-openrouter/ccstatusline-settings.json` に切り替え
+  - `agents/claude/ccstatusline-settings.openrouter.json` からリンク
+- 表示: 使用量の行の代わりに `agents/claude/statusline/openrouter-cost.ts` で OpenRouter のセッション費用を表示
+  - Node の型ストリッピングで直接実行
+  - サブエージェント分を含む
+  - BYOK 分の `upstream_inference_cost` は `(BYOK $…)` として別枠表示
+- 照会キー: 利用上限 $0 の専用キーを使い、macOS キーチェーンに保存
+  - `security add-generic-password -U -a "$USER" -s ccor-statusline -w` を実行し、プロンプトに貼り付け
+
+#### Zed (ACP) 連携
+
+- `claude-acp`: Anthropic 公式向けのみ。OpenRouter 向けは CLI (`ccor`) で利用する
 
 ### Plugins
 
