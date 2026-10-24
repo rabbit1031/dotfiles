@@ -123,7 +123,68 @@
     "dock": "right",
     "button": true,
     "sidebar_side": "right",
-    "favorite_models": [],
+    "favorite_models": [
+      {
+        "provider": "openrouter",
+        "model": "google/gemini-3.8-flash",
+        "enable_thinking": true,
+        "effort": "medium"
+      },
+      {
+        "provider": "openai-subscribed",
+        "model": "gpt-6-luna",
+        "enable_thinking": true,
+        "effort": "medium"
+      },
+      {
+        "provider": "openrouter",
+        "model": "openai/gpt-6-sol",
+        "enable_thinking": true,
+        "effort": "medium"
+      },
+      {
+        "provider": "openrouter",
+        "model": "anthropic/claude-opus-5.5",
+        "enable_thinking": true,
+        "effort": "high"
+      },
+      {
+        "provider": "openrouter",
+        "model": "openai/gpt-6-astra",
+        "enable_thinking": true,
+        "effort": "medium"
+      },
+      {
+        "provider": "openrouter",
+        "model": "anthropic/claude-fable-5.1",
+        "enable_thinking": true,
+        "effort": "high"
+      },
+      {
+        "provider": "openrouter",
+        "model": "anthropic/claude-sonnet-5.5",
+        "enable_thinking": true,
+        "effort": "high"
+      },
+      {
+        "provider": "openrouter",
+        "model": "anthropic/claude-haiku-5.5",
+        "enable_thinking": true,
+        "effort": "medium"
+      },
+      {
+        "provider": "openrouter",
+        "model": "openai/gpt-6.1-sol",
+        "enable_thinking": true,
+        "effort": "medium"
+      },
+      {
+        "provider": "openrouter",
+        "model": "google/gemini-4-argon",
+        "enable_thinking": true,
+        "effort": "medium"
+      }
+    ],
     "model_parameters": [],
     "commit_message_model": {
       "effort": "medium",
