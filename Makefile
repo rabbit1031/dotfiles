@@ -4,9 +4,9 @@ FORCE        ?=
 LN_FLAGS     := -sv$(if $(FORCE),f)
 PNPM_CONFIG_DIR := $(if $(filter Darwin,$(PLATFORM)),$(HOME)/Library/Preferences/pnpm,$(or $(XDG_CONFIG_HOME),$(HOME)/.config)/pnpm)
 
-.PHONY: all link link-force link-bash link-zsh link-nvim link-starship link-git link-gemini link-claude link-npm link-pnpm link-ghostty link-zed link-mise link-colima help
+.PHONY: all link link-force link-bash link-zsh link-nvim link-starship link-git link-gemini link-claude link-codex link-npm link-pnpm link-ghostty link-zed link-mise link-colima help
 
-all: link-bash link-zsh link-nvim link-starship link-git link-gemini link-claude link-npm link-pnpm link-ghostty link-zed link-mise link-colima
+all: link-bash link-zsh link-nvim link-starship link-git link-gemini link-claude link-codex link-npm link-pnpm link-ghostty link-zed link-mise link-colima
 
 link: all
 
@@ -69,6 +69,11 @@ link-claude:
 	ln $(LN_FLAGS) $(DOTFILES_DIR)/agents/claude/ccstatusline-settings.json $(HOME)/.config/ccstatusline/settings.json
 	$(call SAFE_LINK_DIR,$(DOTFILES_DIR)/agents/claude/plugins/notion-workflow/skills,$(HOME)/.claude/skills)
 
+link-codex:
+	@mkdir -pv $(HOME)/.codex
+	ln $(LN_FLAGS) $(DOTFILES_DIR)/agents/codex/config.toml $(HOME)/.codex/config.toml
+	@test -e $(HOME)/.codex/local.config.toml || { touch $(HOME)/.codex/local.config.toml; echo "created $(HOME)/.codex/local.config.toml"; }
+
 link-npm:
 	ln $(LN_FLAGS) $(DOTFILES_DIR)/.npmrc $(HOME)/.npmrc
 
@@ -105,6 +110,7 @@ help:
 	@echo "  link-git      Link Git config"
 	@echo "  link-gemini   Link Gemini agent config"
 	@echo "  link-claude   Link Claude agent config"
+	@echo "  link-codex    Link Codex agent config"
 	@echo "  link-npm      Link npm config"
 	@echo "  link-pnpm     Link pnpm config"
 	@echo "  link-ghostty  Link Ghostty config"

@@ -1,0 +1,20 @@
+# https://developers.openai.com/codex/config-advanced#profiles
+# https://openrouter.ai/docs/cookbook/coding-agents/codex-cli
+model_provider = "openrouter"
+model = "openai/gpt-6-luna"
+
+[model_providers.openrouter]
+name = "openrouter"
+base_url = "https://openrouter.ai/api/v1"
+supports_websockets = false
+
+[model_providers.openrouter.auth]
+command = "op"
+args = ["read", "op://Private/OpenRouter/coding-agent-api-key"]
+timeout_ms = 30000
+refresh_interval_ms = 0
+
+[tui]
+status_line = ["git-branch", "branch-changes", "model-with-reasoning", "approval-mode", "context-remaining", "weekly-limit", "five-hour-limit"]
+status_line_use_colors = true
+theme = "monokai-extended"
