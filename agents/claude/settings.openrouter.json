@@ -14,7 +14,7 @@
     "ANTHROPIC_CUSTOM_MODEL_OPTION": "anthropic/claude-haiku-5.5[1m]",
     "ANTHROPIC_CUSTOM_MODEL_OPTION_NAME": "Haiku 5.5"
   },
-  "apiKeyHelper": "op read 'op://Private/OpenRouter/claude-code-api-key'",
+  "apiKeyHelper": "op read 'op://Private/OpenRouter/coding-agent-api-key'",
   "model": "google/gemini-3.8-flash[1m]",
   "statusLine": {
     "type": "command",
