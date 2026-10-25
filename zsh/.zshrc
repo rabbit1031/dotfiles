@@ -161,4 +161,15 @@ function ccor() {
     command claude --settings "${dir}/settings.openrouter.json" "$@"
 }
 
+# Codex with machine-local profile (~/.codex/local.config.toml) so trust entries don't reach the linked config.toml
+# --profile only applies to runtime commands and needs --no-daemon (embedded mode); other subcommands (login etc.) pass through
+function codex() {
+  case "$1" in
+    ""|-*|*" "*|exec|review|resume|queue|archive|delete|unarchive|fork|mcp|sandbox)
+      command codex --no-daemon --profile local "$@" ;;
+    *)
+      command codex "$@" ;;
+  esac
+}
+
 

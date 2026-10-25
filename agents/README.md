@@ -63,4 +63,14 @@ Notion タスク・ノート管理ワークフロースキル集。
 - [ステータスラインをカスタマイズする - Claude Code Docs](https://code.claude.com/docs/ja/statusline)
   - [sirmalloc/ccstatusline: 🚀 Beautiful highly customizable statusline for Claude Code CLI with powerline support, themes, and more.](https://github.com/sirmalloc/ccstatusline)
 
+## Codex
+
+Codex CLI は trust 設定（`[projects."…"]`）などの端末ローカル状態を、選択中の設定ファイルに自動で書き込む。共通設定とローカル状態を分けて管理する。
+
+- 共通設定: `agents/codex/config.toml`
+  - `~/.codex/config.toml` へリンク
+- 接続先: OpenRouter
+- ローカル状態: `~/.codex/local.config.toml`（git 管理外）
+  - `config.toml` の上に重なり、trust などの書き込み先になる
+
 ## Gemini
