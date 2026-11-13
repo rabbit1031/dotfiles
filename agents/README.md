@@ -24,6 +24,8 @@ Claude Code を Anthropic 公式（OAuth/サブスクリプション）と OpenR
 - 差分設定: `agents/claude/settings.openrouter.json`
   - `~/.claude-openrouter/settings.openrouter.json` へリンク
 - モデル: Claude は公式側で使うため、主に非 Claude モデルを割り当て
+- auto mode: OpenRouter はサーバー側の分類器チェックに未対応のため、`CLAUDE_CODE_AUTO_MODE_SERVER=0` で要求を止め、無料化の対象外である旨の通知を抑止
+  - [Auto mode classifier billing - Claude Code Docs](https://code.claude.com/docs/en/auto-mode-classifier-billing)
 - 認証: `apiKeyHelper` 経由で 1Password CLI からオンデマンド取得
 
 ##### ステータスライン（OpenRouter 向け）
