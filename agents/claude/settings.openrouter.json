@@ -3,6 +3,7 @@
   "env": {
     "ANTHROPIC_BASE_URL": "https://openrouter.ai/api",
     "CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY": "0",
+    "CLAUDE_CODE_AUTO_MODE_SERVER": "0",
     "ANTHROPIC_DEFAULT_FABLE_MODEL": "google/gemini-4-carbon[1m]",
     "ANTHROPIC_DEFAULT_FABLE_MODEL_NAME": "Fable (Custom - Google: Gemini 4 Carbon)",
     "ANTHROPIC_DEFAULT_OPUS_MODEL": "openai/gpt-6.1-sol[1m]",
